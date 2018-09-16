@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import 
 {
-    Col,Breadcrumb,BreadcrumbItem,Form,
-    FormGroup,ControlLabel,FormControl,
+    Col,Form,
+    FormGroup,FormControl,
     Checkbox,Button
 } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
@@ -20,8 +20,7 @@ class User extends Component {
                     <div class="small-card card-body">
                         <center>
                             <Link to ="/">
-                                <h4 style = {{marginTop:"20px"}}>Projects</h4>
-                               
+                                <h4 style = {{marginTop:"20px"}}>Projects</h4>                               
                                
                             </Link>
                         </center>
@@ -30,7 +29,7 @@ class User extends Component {
                 <Col  md={2}>
                     <div class="small-card card-body">
                         <center>
-                            <Link to ="/">
+                            <Link to ="/UDF">
                                 <h4 style = {{marginTop:"20px"}}>UDF</h4>                                
                             </Link>
                         </center>

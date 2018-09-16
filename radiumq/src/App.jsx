@@ -7,8 +7,9 @@ import Background from './components/background';
 import Footer from './components/Footer';
 import Pie from './components/Pie';
 import Admin from './components/Admin';
-
+import UserHome from './components/UserHomepage';
 import User from './components/User';
+import UDF from './components/UDF';
 
 class App extends Component {
   render() {
@@ -16,7 +17,8 @@ class App extends Component {
       <Router>
         <div>
         <Route exact path="/" component={Admin}/>
-        <Route exact path="/User" component ={User}/>       
+        <Route exact path="/User" component ={User}/> 
+        <Route exact path="/UDF" component ={UDF}/>       
         <Footer/>
         </div>
       </Router>

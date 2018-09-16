@@ -36,6 +36,7 @@
             background-clip: border-box;
             border: 1px solid rgba(0,0,0,.125);
             border-radius: .25rem;
+            background: #2f3e47;
         
        
     }
@@ -58,6 +59,7 @@
       margin-top: 10px;
       width: 90px;
       height:100px;
+      background: #2f3e47
     }
     
     @media (min-width: 992px){
@@ -71,6 +73,19 @@
         width: 450px;
       }
     }
-    .btn-default{
-      background-color: #d7514d !important
+   
+    p,h4{
+      color:white
     }
+    .glyphicon {
+      position: relative;
+      top: 1px;
+      display: inline-block;
+      font-family: 'Glyphicons Halflings';
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      color: red;
+  }

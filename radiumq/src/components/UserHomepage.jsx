@@ -4,7 +4,7 @@ import {
        ButtonToolbar,Glyphicon,Tooltip,OverlayTrigger
 } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
-import Chart from './Chart';
+import {Doughnut, Bar} from 'react-chartjs-2';
 import './Admin.css';
 const del = (
   <Tooltip id="tooltip">
@@ -59,7 +59,7 @@ const  data2 = {
       ]
   }]
 };
-class Cards extends Component {
+class UserHome extends Component {
     //state = {  }
     render() { 
         return ( 
@@ -70,55 +70,17 @@ class Cards extends Component {
             <div className="small-card card-body color-white">
               <center>
                   <Link to ="/User">
-                    <p>Users</p>
-                    <hr/>
-                    <Badge>17</Badge>
+                    <p>Users</p>                    
                   </Link>
               </center>
             </div>          
-          </Col>
-          <Col md={2}>
-            <div className="small-card card-body">
-            <center>
-             <p>Admin</p>
-             <hr/>
-             <Badge>6</Badge>
-             </center>
-            </div>          
-          </Col>
-          <Col md={2}>
-            <div className="small-card card-body">
-            <center>
-             <p>Manager</p>
-             <hr/>
-             <Badge>7</Badge>
-             </center>
-            </div>          
-          </Col>
-          <Col md={2}>
-            <div className="small-card card-body">
-            <center>
-             <p>Tester</p>
-             <hr/>
-             <Badge>14</Badge>
-             </center>
-            </div>          
-          </Col>
-          <Col md={2}>
-            <div className="small-card card-body">
-            <center>
-             <p>Projects</p>
-             <hr/>
-             <Badge>46</Badge>
-             </center>
-            </div>                   
-          </Col>
+          </Col>        
           <Col md={2}>
             <div className="small-card card-body" style ={{width:"110px"}}>
             <center>
              <p>Test Cases</p>
              <hr/>
-             <Badge>26</Badge>
+             <Badge>+</Badge>
              </center>
             </div>          
           </Col>
@@ -130,6 +92,24 @@ class Cards extends Component {
              <Badge>25</Badge>
              </center>
             </div>          
+          </Col>
+          <Col md={2}>
+            <div className="small-card card-body">
+            <center>
+             <p>Scenario</p>
+             <hr/>
+             <Badge>+</Badge>
+             </center>
+            </div>                   
+          </Col>
+          <Col md={2}>
+            <div className="small-card card-body">
+            <center>
+             <p>UDF</p>
+             <hr/>
+             <Badge>+</Badge>
+             </center>
+            </div>                   
           </Col>
           <Col md={2}>
             <div className="small-card card-body">
@@ -149,15 +129,14 @@ class Cards extends Component {
              </center>
             </div>          
           </Col>
-          
         </div>
           <div className="row">
             <Col md={4} mdOffset={1} >
               <div className="card example-1 scrollbar-ripe-malinka">
               <div className="card-body">
-              <h4 >Projects</h4>          
+              <h4 >Projects</h4>
               <hr/>
-             <div className="row">
+              <div className="row">
                 <Col md={8}>
                   <p>Project 1</p>                                  
                 </Col>
@@ -516,7 +495,75 @@ class Cards extends Component {
               </div>
              </div>
             </Col>    
-           <Chart/>           
+            <Col md={4} sm={6} >
+                <div className ="card" style = {{width:"360px", marginLeft:"100px", marginTop:"20px"}}>
+                    <div className ="card-body">
+                        <h4>Project Duration</h4>
+                        <hr/>
+                            <Doughnut
+                                    data={data1}
+                                    width={100}
+                                    height={90}
+                                    options={{
+                                                legend:{display:true},
+                                                title:{
+                                                    display:true
+                                                },
+                                                labels: {
+                                                    fontColor: "#fff",
+                                                    fontSize: 20
+                                                }
+
+                                                
+                                            }}
+                            />
+                     </div>
+                 </div>
+            </Col> 
+            <Col md={4}>
+                <div className ="card" style = {{width:"360px", marginLeft:"100px", marginTop:"20px"}}>
+                    <div className ="card-body">
+                        <h4> Total Testcases</h4>
+                        <hr/>
+                            <Doughnut
+                                    data={data2}
+                                    width={100}
+                                    height={90}
+                                    options={{
+                                              
+                                                legend:{display:true},
+                                                title:{
+                                                    display:true
+                                                }
+                                                
+                                            }}
+                            />
+                            
+                     </div>
+                 </div>
+            </Col>  
+            <Col md={4}>
+                <div className ="card" style = {{width:"360px", marginLeft:"100px", marginTop:"20px"}}>
+                    <div className ="card-body">
+                        <h4> Time Taken</h4>
+                        <hr/>
+                            <Doughnut
+                                    data={data2}
+                                    width={100}
+                                    height={90}
+                                    options={{
+                                              
+                                                legend:{display:true},
+                                                title:{
+                                                    display:true
+                                                }
+                                                
+                                            }}
+                            />
+                            
+                     </div>
+                 </div>
+            </Col>        
         </div>
        
       </div>
@@ -525,4 +572,4 @@ class Cards extends Component {
     }
 }
  
-export default Cards;
+export default UserHome;

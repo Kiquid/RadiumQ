@@ -56,7 +56,7 @@ class Chart extends Component {
             <Col md={4} sm={6} >
                 <div className ="card" style = {{width:"360px", marginLeft:"100px", marginTop:"20px"}}>
                     <div className ="card-body">
-                        <b>Testing Results</b>
+                        <h4>Testing Results</h4>
                         <hr/>
                             <Doughnut
                                     data={data1}
@@ -66,7 +66,12 @@ class Chart extends Component {
                                                 legend:{display:true},
                                                 title:{
                                                     display:true
+                                                },
+                                                labels: {
+                                                    fontColor: "#fff",
+                                                    fontSize: 20
                                                 }
+
                                                 
                                             }}
                             />
@@ -77,7 +82,7 @@ class Chart extends Component {
             <Col md={4}>
                 <div className ="card" style = {{width:"360px", marginLeft:"100px", marginTop:"20px"}}>
                     <div className ="card-body">
-                        <b>Statistic</b>
+                        <h4>Statistic</h4>
                         <hr/>
                         <div>
                             <p>Execution Time</p>
@@ -95,7 +100,7 @@ class Chart extends Component {
             <Col md={4}>
                 <div className ="card" style = {{width:"360px", marginLeft:"100px", marginTop:"20px"}}>
                     <div className ="card-body">
-                        <b>Project Status</b>
+                        <h4>Project Status</h4>
                         <hr/>
                             <Doughnut
                                     data={data2}
