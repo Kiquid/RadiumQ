@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {Col,Button,ProgressBar,Badge} from 'react-bootstrap';
+import {Col,Button,ProgressBar,Badge,ButtonGroup,ButtonToolbar,Glyphicon} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import Chart from './Chart';
 import './Admin.css';
@@ -146,8 +146,13 @@ class Cards extends Component {
                 <Col md={4}>
                   <p>Project 1</p>                                  
                 </Col>
-                <Col md={3}>
-                <Button bsStyle="danger">Del</Button>                                 
+                <Col md={3}>                
+                  <ButtonToolbar>                 
+                    <Button bsSize="xsmall">
+                      <Glyphicon glyph="remove" /> 
+                    </Button>                   
+                  </ButtonToolbar>
+                                              
                 </Col>
                 <Col md={3}>
                 <Button bsStyle="info">Edit</Button>                                 

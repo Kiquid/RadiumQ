@@ -114,20 +114,44 @@ class User extends Component {
                         <div className ="row">
                         <FormGroup>
                             <Col sm={6} md ={6}>
-                            <Button type = "Submit" bsStyle="primary">Create</Button>                       
+                            <Button type = "Submit" bsStyle="success">Create</Button>                       
                              </Col> 
                         
                             <Col sm={6} md ={6}>
                             <Button bsStyle="danger">cancel</Button>                       
                              </Col> 
                         </FormGroup> 
-                        </div>
-                                         
+                        </div>                                         
                     </Form>                   
                     </div>
                 </Col>                              
             </div>  
-                                                
+           <div className = "medium-card-color-list">
+              <p  className = "medium-card-color-light-list" style = {{padding:"15px"}}>List of Users</p>
+            <div className="row">
+            <Col md={2} style={{color:"white"}}>
+            <p>User ID</p>
+            </Col>
+            <Col md={2} style={{color:"white"}}>
+            <p>Role</p>
+            </Col>
+            <Col md={2} style={{color:"white"}}>
+            <p>Name</p>
+            </Col>
+            <Col md={2} style={{color:"white"}}>
+            <p>Email</p>
+            </Col>
+            <Col md={2} style={{color:"white"}}>
+            <p>Active</p>
+            </Col>
+            <Col md={3} style={{color:"white"}}>
+            <p>Careated By</p>
+            </Col>
+            <Col md={3} style={{color:"white"}}>
+            <p>Careated on</p>
+            </Col>
+            </div>
+            </div>                                                
           </div>
           
          )

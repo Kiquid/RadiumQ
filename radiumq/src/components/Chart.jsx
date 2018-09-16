@@ -53,7 +53,7 @@ class Chart extends Component {
         return ( 
     <div className="container">
         <div className="row">
-            <Col md={6} sm={6} lg ={2}>
+            <Col md={4} sm={6} >
                 <div className ="card" style = {{width:"360px", marginLeft:"100px", marginTop:"20px"}}>
                     <div className ="card-body">
                         <b>Testing Results</b>

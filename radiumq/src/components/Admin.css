@@ -71,3 +71,6 @@
         width: 450px;
       }
     }
+    .btn-default{
+      background-color: #d7514d !important
+    }
