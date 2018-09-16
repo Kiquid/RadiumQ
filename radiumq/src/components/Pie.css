@@ -1,0 +1,18 @@
+.bgcolor{
+    fill:#FF6384 !important;
+    stroke: #04f6ba !important;
+    border-radius: 10px !important;
+    width: 10px !important;
+    height: 10px !important;
+  
+}
+
+.bgcolor1{
+    fill: #faf3f5 !important;
+    width: 10px !important;
+    height: 10px !important;
+    
+}
+.donutchart-legend-item{
+    margin-top: 100px !important;
+}
