@@ -155,7 +155,7 @@ class Cards extends Component {
             <Col md={4} mdOffset={1} >
               <div className="card example-1 scrollbar-ripe-malinka">
               <div className="card-body">
-              <h4 >Projects</h4>          
+                <h4 >Projects</h4>                 
               <hr/>
              <div className="row">
                 <Col md={8}>
@@ -326,6 +326,7 @@ class Cards extends Component {
               </div>
               </div>
               </div>
+              
             </Col>
 
             <Col md={7} >

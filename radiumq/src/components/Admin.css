@@ -89,3 +89,6 @@
       -moz-osx-font-smoothing: grayscale;
       color: red;
   }
+  a:hover{
+    color: #f093fb;
+  }
