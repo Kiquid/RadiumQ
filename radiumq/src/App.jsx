@@ -10,12 +10,14 @@ import Admin from './components/Admin';
 import UserHome from './components/UserHomepage';
 import User from './components/User';
 import UDF from './components/UDF';
+import Header from './components/Header';
 
 class App extends Component {
   render() {
     return (
       <Router>
         <div>
+         <Header/> 
         <Route exact path="/" component={Admin}/>
         <Route exact path="/User" component ={User}/> 
         <Route exact path="/UDF" component ={UDF}/>       

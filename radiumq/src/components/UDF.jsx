@@ -204,7 +204,7 @@ class UDF extends Component {
         <Col md={6}>
             <div className = "medium-card-color-list" style={{height:"650px"}}>
                 <div className = "medium-card-color-light-list">
-                <h4 style={{textAlign:"left",marginLeft:"10px",padding:"12px",marginTop:"0px"}}>Create UDF</h4>
+                <h4 style={{textAlign:"left",marginLeft:"10px",padding:"12px",marginTop:"0px"}}>List of UDF</h4>
                 </div>
                 <Table responsive  bordered style={{color:"white"}}>
   <thead>
