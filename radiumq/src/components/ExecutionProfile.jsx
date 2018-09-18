@@ -19,11 +19,11 @@ const del = (
       <strong>Edit!</strong> 
     </Tooltip>
   );
-class UDF extends Component {
+class ExecutionProfile extends Component {
    // state = {  }
     render() { 
         return (
-    <div className = "container">
+        <div className = "container">
         <div className = "row">
             <Col  md={2} mdOffset={1}>
                 <div class="small-card card-body">
@@ -56,8 +56,8 @@ class UDF extends Component {
             <Col  md={2}>
                 <div class="small-card card-body" style ={{width:"110px"}}>
                     <center>
-                        <Link to ="/Exe">
-                            <h4 style = {{marginTop:"20px"}}>Execution Profile</h4>                            
+                        <Link to ="/UDF">
+                            <h4 style = {{marginTop:"20px"}}>UDF</h4>                            
                         </Link>
                     </center>
                 </div> 
@@ -66,15 +66,15 @@ class UDF extends Component {
         <div className = "row">
         <Col md={12} xs={8} sm={8}>
             <div className= "Banner">
-                <h4 style={{textAlign:"left",marginLeft:"10px"}}> UDF</h4>
+                <h4 style={{textAlign:"left",marginLeft:"10px"}}> Execution Profile</h4>
         </div>
         </Col>
         </div>
         <div className = "row" style={{marginLeft:"9px"}}>
             <Col md ={6}>
-            <div className = "medium-card-color-list" style={{height:"650px"}}>
+            <div className = "medium-card-color-list" style={{height:"1150px"}}>
                 <div className = "medium-card-color-light-list">
-                 <h4 style={{textAlign:"left",marginLeft:"10px",padding:"12px",marginTop:"0px"}}>Create UDF</h4>
+                 <h4 style={{textAlign:"left",marginLeft:"10px",padding:"12px",marginTop:"0px"}}>Create Execution Profile</h4>
                     <Form horizontal>                  
                     <FormGroup controlId="formHorizontalText">  
                         <Col componentClass={ControlLabel} md={2}>
@@ -92,96 +92,156 @@ class UDF extends Component {
                             <FormControl type="text" placeholder="Description" required />
                             </Col>
                         </FormGroup>
-                        <FormGroup controlId="formHorizontalText">
-                         <Col componentClass={ControlLabel} sm={2} md={2} style={{paddingTop:"0px"}}>
-                         Position Type
-                         </Col>                           
-                            <Col sm={10} md={2}>
-                            <select id = "dropdown">
-                                <option value="After Last">After Last</option>
-                                <option value="Before Last">Before Last</option>
-                                <option value="Step No">Step no</option>
-                           </select>
+                        <FormGroup>
+                        <Col componentClass={ControlLabel} sm={2} md={2}>
+                         Global
+                         </Col>  
+                            <Col  sm={10} md={2}>
+                            <Checkbox style ={{color:"White"}} required> </Checkbox>
                             </Col>
-                        </FormGroup>
+                        </FormGroup>                           
+                          
+                       
                         <FormGroup controlId="formHorizontalText">
                          <Col componentClass={ControlLabel} sm={2} md={2}>
-                        Variable Scope
+                        Engine
                          </Col>                           
                             <Col sm={10} md={2}>
                             <select id = "dropdown">
-                                <option value="After Last">Test case</option>
-                                <option value="Before Last">Scenario</option>
-                               
+                                <option value="After Last">PC-webUI</option>
+                                <option value="Before Last">Mobile</option>
+                                <option value="Before Last">API</option>                               
                            </select>                           
                             </Col>
                         </FormGroup>
                         <FormGroup controlId="formHorizontalText">
                          <Col componentClass={ControlLabel} sm={2} md={2}>
-                        Method Type
+                        Thread Mode
                          </Col>                           
                             <Col sm={10} md={2}>
                             <select id = "dropdown">
-                                <option value="After Last">Browser</option>
-                                <option value="Before Last">Web object</option>
-                                <option value="Before Last">Generic</option>
-                                <option value="Before Last">Conditional</option>
-                                <option value="Before Last">Checking</option>
-                                <option value="Before Last">Fetching</option>
+                                <option value="After Last">Parallel</option>
+                                <option value="Before Last">Sequential</option>                                
                            </select>                           
                             </Col>
                         </FormGroup>
+                        <div className ="row">
+                        <FormGroup>
+                            <Col sm={6} md ={3}>
+                            <Button type = "Submit" bsStyle="success">Save</Button>                       
+                             </Col> 
+                        
+                            <Col sm={6} md ={2}>
+                            <Button bsStyle="danger">cancel</Button>                       
+                             </Col> 
+                        </FormGroup> 
+                        </div>    
+                        <hr/>                        
+                        <h4 style= {{textAlign:"left"}}>Browser Details</h4>                       
+                        <hr/>
                         <FormGroup controlId="formHorizontalText">
                          <Col componentClass={ControlLabel} sm={2} md={2}>
-                       URL Type
+                         Broswer Engine
                          </Col>                           
                             <Col sm={10} md={2}>
                             <select id = "dropdown">
-                                <option value="After Last">Text</option>
-                                <option value="Before Last">Variable</option>
-                                <option value="Before Last">TextWithVariable</option>                                
+                                <option value="After Last">PC-webUI</option>
+                                <option value="Before Last">Mobile</option>
+                                <option value="Before Last">API</option>                               
                            </select>                           
                             </Col>
                         </FormGroup>
-                        <FormGroup controlId="formHorizontalText">
-                         <Col componentClass={ControlLabel} sm={2} md={2}>
-                            URL
-                         </Col>
-                         <Col sm={10} md={6}>
+                        <FormGroup controlId="formHorizontalText">  
+                        <Col componentClass={ControlLabel} md={2}>
+                         Name
+                         </Col>                         
+                            <Col sm={10} md={5}>
                             <FormControl type="text" placeholder="Name" required />
                             </Col>
-                         </FormGroup>
-                         <FormGroup controlId="formHorizontalText">
+                        </FormGroup>
+                        <FormGroup controlId="formHorizontalText">
                          <Col componentClass={ControlLabel} sm={2} md={2}>
-                            Position
-                         </Col>
-                         <Col sm={10} md={6}>
-                            <FormControl type="text" placeholder="Name" required />
-                            </Col>
-                         </FormGroup>
-                         <FormGroup controlId="formHorizontalText">
-                            <Col componentClass={ControlLabel} sm={2} md={2}>
-                                Variable
-                            </Col>
-                            <Col sm={10} md={6}>
-                                <FormControl type="text" placeholder="Name" required />
-                             </Col>
-                         </FormGroup>
-                         <FormGroup controlId="formHorizontalText">
-                            <Col componentClass={ControlLabel} sm={2} md={2}>
-                                Method
-                            </Col>
+                        Location
+                         </Col>                           
                             <Col sm={10} md={2}>
                             <select id = "dropdown">
-                                <option value="After Last">Open</option>
-                                <option value="Before Last">Close</option>
-                                <option value="Before Last">Activate</option>
-                                <option value="Before Last">Maximise</option>
-                                <option value="Before Last">Minimise</option>
-                               
-                           </select>
-                             </Col>
-                         </FormGroup>
+                                <option value="After Last">Local</option>
+                                <option value="Before Last">Remote/Cloud</option>
+                                <option value="Before Last">Headless</option>                               
+                           </select>                           
+                            </Col>
+                        </FormGroup>
+                        <FormGroup controlId="formHorizontalText">
+                         <Col componentClass={ControlLabel} sm={2} md={2}>
+                        Type
+                         </Col>                           
+                            <Col sm={10} md={2}>
+                            <select id = "dropdown">
+                                <option value="After Last">Internet Explorer</option>
+                                <option value="Before Last">Chrome</option>
+                                <option value="Before Last">FireFox</option>                               
+                           </select>                           
+                            </Col>
+                        </FormGroup>
+                        <FormGroup controlId="formHorizontalText">  
+                        <Col componentClass={ControlLabel} md={2}>
+                         Wait
+                         </Col>                         
+                            <Col sm={10} md={5}>
+                            <FormControl type="text" placeholder="In Seconds" required />
+                            </Col>
+                        </FormGroup>
+                        <FormGroup controlId="formHorizontalText">  
+                        <Col componentClass={ControlLabel} md={2}>
+                         Remote URL
+                         </Col>                         
+                            <Col sm={10} md={5}>
+                            <FormControl type="text" required />
+                            </Col>
+                        </FormGroup>
+                        <div className ="row">
+                        <FormGroup>
+                            <Col sm={6} md ={3}>
+                            <Button type = "Submit" bsStyle="success">Save</Button>                       
+                             </Col> 
+                        
+                            <Col sm={6} md ={2}>
+                            <Button bsStyle="danger">cancel</Button>                       
+                             </Col> 
+                        </FormGroup> 
+                        </div>    
+                        <hr/>
+                        <h4>Browser Properties</h4>                        
+                        <hr/>
+                        <FormGroup controlId="formHorizontalText">
+                         <Col componentClass={ControlLabel} sm={2} md={2}>
+                       Browser Type
+                         </Col>                           
+                            <Col sm={10} md={2}>
+                            <select id = "dropdown">
+                            <option value="After Last"> System</option>
+                                <option value="After Last">Drive</option>
+                                <option value="Before Last">Chrome options</option>
+                                <option value="Before Last">FireFox Profile</option>                               
+                           </select>                           
+                            </Col>
+                            </FormGroup>
+                            <FormGroup controlId="formHorizontalText">  
+                        <Col componentClass={ControlLabel} md={2}>
+                         Browser Name
+                         </Col>                         
+                            <Col sm={10} md={5}>
+                            <FormControl type="text" placeholder="Type the Browser Name" required />
+                            </Col>                        
+                        </FormGroup>
+                        <FormGroup controlId="formHorizontalText">  
+                        <Col componentClass={ControlLabel} md={2}>
+                         Browser Vakue
+                         </Col>                         
+                            <Col sm={10} md={5}>
+                            <FormControl type="text" placeholder="Type the value" required />
+                            </Col>                        
+                        </FormGroup>
                          <div className ="row">
                         <FormGroup>
                             <Col sm={6} md ={3}>
@@ -197,14 +257,13 @@ class UDF extends Component {
                     </Form>
                 </div>                
              </div>
-            </Col> 
-      
+            </Col>       
         </div>
         <div className = "row" style={{marginLeft:"9px"}}>
         <Col md={6}>
             <div className = "medium-card-color-list" style={{height:"650px"}}>
                 <div className = "medium-card-color-light-list">
-                <h4 style={{textAlign:"left",marginLeft:"10px",padding:"12px",marginTop:"0px"}}>List of UDF</h4>
+                <h4 style={{textAlign:"left",marginLeft:"10px",padding:"12px",marginTop:"0px"}}>List of Execution Profile</h4>
                 </div>
                 <Table responsive  bordered style={{color:"white"}}>
   <thead>
@@ -271,10 +330,9 @@ class UDF extends Component {
             </div>
             </Col>
             </div>
-        
-    </div>
-    );
+        </div>
+        );
     }
 }
  
-export default UDF;
+export default ExecutionProfile;

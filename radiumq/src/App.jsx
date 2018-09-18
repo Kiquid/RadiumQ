@@ -11,6 +11,9 @@ import UserHome from './components/UserHomepage';
 import User from './components/User';
 import UDF from './components/UDF';
 import Header from './components/Header';
+import Changepassword from './components/changepassword';
+import background from './components/background';
+import Execution from './components/ExecutionProfile';
 
 class App extends Component {
   render() {
@@ -18,9 +21,12 @@ class App extends Component {
       <Router>
         <div>
          <Header/> 
+         
+         <Route exact path="/Changepassword" component ={Changepassword}/>
         <Route exact path="/" component={Admin}/>
         <Route exact path="/User" component ={User}/> 
-        <Route exact path="/UDF" component ={UDF}/>       
+        <Route exact path="/UDF" component ={UDF}/>  
+        <Route exact path="/Exe" component ={Execution}/>      
         <Footer/>
         </div>
       </Router>

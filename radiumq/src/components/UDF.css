@@ -16,5 +16,8 @@
    text-align: center;
 }
 select{
-    background-color: #2f3e47
+    background-color: #2f3e47;
+    border-radius: 4px;
+    width: 40rem;
+    height: 3rem;
 }

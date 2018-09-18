@@ -66,7 +66,7 @@ class Cards extends Component {
 //opening of the container
 <div className="container">
         <div className="row">
-          <Col md={2} mdOffset={1}>
+          <Col md={2}  mdOffset={1}>
             <div className="small-card card-body color-white">
               <center>
                   <Link to ="/User">
@@ -125,7 +125,9 @@ class Cards extends Component {
           <Col md={2}>
             <div className="small-card card-body">
             <center>
+              <Link to ="/Exe">
              <p>Profile</p>
+             </Link>
              <hr/>
              <Badge>25</Badge>
              </center>

@@ -47,7 +47,7 @@ class User extends Component {
                 <Col  md={2}>
                     <div class="small-card card-body" style = {{width:"100px"}}>
                         <center>
-                            <Link to ="/">
+                            <Link to ="/Exe">
                                 <h4 style = {{marginTop:"20px"}}>Execution Profile</h4>                                
                             </Link>
                         </center>
@@ -144,10 +144,10 @@ class User extends Component {
             <p>Active</p>
             </Col>
             <Col md={3} style={{color:"white"}}>
-            <p>Careated By</p>
+            <p>Created By</p>
             </Col>
             <Col md={3} style={{color:"white"}}>
-            <p>Careated on</p>
+            <p>Created on</p>
             </Col>
             </div>
             </div>                                                
