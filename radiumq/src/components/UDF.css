@@ -20,4 +20,11 @@ select{
     border-radius: 4px;
     width: 40rem;
     height: 3rem;
+    color:white;
+}
+.modal-content{
+    background-color: #13191c
+}
+.close{
+    color:white;
 }

@@ -3,8 +3,7 @@ import
 {
     Col,Form,
     FormGroup,FormControl,ControlLabel,
-    Checkbox,Button,Table,Glyphicon,ButtonToolbar,
-    Overlay,OverlayTrigger,Tooltip,Modal
+    Checkbox,Button,Table,Glyphicon,ButtonToolbar,Overlay,OverlayTrigger,Tooltip
 } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import './UDF.css';
@@ -20,29 +19,11 @@ const del = (
       <strong>Edit!</strong> 
     </Tooltip>
   );
-class ExecutionProfile extends Component {
+class TestCases extends Component {
    // state = {  }
-   constructor(props, context) {
-    super(props, context);
-
-    this.handleShow = this.handleShow.bind(this);
-    this.handleClose = this.handleClose.bind(this);
-
-    this.state = {
-      show: false
-    };
-  }
-
-  handleClose() {
-    this.setState({ show: false });
-  }
-
-  handleShow() {
-    this.setState({ show: true });
-  }
     render() { 
         return (
-        <div className = "container">
+    <div className = "container">
         <div className = "row">
             <Col  md={2} mdOffset={1}>
                 <div class="small-card card-body">
@@ -75,8 +56,8 @@ class ExecutionProfile extends Component {
             <Col  md={2}>
                 <div class="small-card card-body" style ={{width:"110px"}}>
                     <center>
-                        <Link to ="/UDF">
-                            <h4 style = {{marginTop:"20px"}}>UDF</h4>                            
+                        <Link to ="/Exe">
+                            <h4 style = {{marginTop:"20px"}}>Execution Profile</h4>                            
                         </Link>
                     </center>
                 </div> 
@@ -84,8 +65,8 @@ class ExecutionProfile extends Component {
             <Col  md={2}>
                 <div class="small-card card-body" style ={{width:"110px"}}>
                     <center>
-                        <Link to ="/testcase">
-                            <h4 style = {{marginTop:"20px"}}>Test cases</h4>                            
+                        <Link to ="/UDF">
+                            <h4 style = {{marginTop:"20px"}}>UDF</h4>                            
                         </Link>
                     </center>
                 </div> 
@@ -94,15 +75,15 @@ class ExecutionProfile extends Component {
         <div className = "row">
         <Col md={12} xs={8} sm={8}>
             <div className= "Banner">
-                <h4 style={{textAlign:"left",marginLeft:"10px"}}> Execution Profile</h4>
+                <h4 style={{textAlign:"left",marginLeft:"10px"}}> TestCases</h4>
         </div>
         </Col>
         </div>
         <div className = "row" style={{marginLeft:"9px"}}>
             <Col md ={6}>
-            <div className = "medium-card-color-list" style={{height:"850px"}}>
+            <div className = "medium-card-color-list" style={{height:"750px"}}>
                 <div className = "medium-card-color-light-list">
-                 <h4 style={{textAlign:"left",marginLeft:"10px",padding:"12px",marginTop:"0px"}}>Create Execution Profile</h4>
+                 <h4 style={{textAlign:"left",marginLeft:"10px",padding:"12px",marginTop:"0px"}}>Create TestCases</h4>
                     <Form horizontal>                  
                     <FormGroup controlId="formHorizontalText">  
                         <Col componentClass={ControlLabel} md={2}>
@@ -120,114 +101,113 @@ class ExecutionProfile extends Component {
                             <FormControl type="text" placeholder="Description" required />
                             </Col>
                         </FormGroup>
-                        <FormGroup>
-                        <Col componentClass={ControlLabel} sm={2} md={2}>
-                         Global
-                         </Col>  
-                            <Col  sm={10} md={2}>
-                            <Checkbox style ={{color:"White"}} required> </Checkbox>
-                            </Col>
-                        </FormGroup>                           
-                          
-                       
                         <FormGroup controlId="formHorizontalText">
-                         <Col componentClass={ControlLabel} sm={2} md={2}>
-                        Engine
+                         <Col componentClass={ControlLabel} sm={2} md={2} style={{paddingTop:"0px"}}>
+                         Position Type
                          </Col>                           
                             <Col sm={10} md={2}>
                             <select id = "dropdown">
-                                <option value="After Last">PC-webUI</option>
-                                <option value="Before Last">Mobile</option>
-                                <option value="Before Last">API</option>                               
+                                <option value="After Last">After Last</option>
+                                <option value="Before Last">Before Last</option>
+                                <option value="Step No">Step no</option>
+                           </select>
+                            </Col>
+                        </FormGroup>
+                        <FormGroup controlId="formHorizontalText">
+                         <Col componentClass={ControlLabel} sm={2} md={2}>
+                        Variable Scope
+                         </Col>                           
+                            <Col sm={10} md={2}>
+                            <select id = "dropdown">
+                                <option value="After Last">Test case</option>
+                                <option value="Before Last">Scenario</option>
+                               
                            </select>                           
                             </Col>
                         </FormGroup>
                         <FormGroup controlId="formHorizontalText">
                          <Col componentClass={ControlLabel} sm={2} md={2}>
-                        Thread Mode
+                        Method Type
                          </Col>                           
                             <Col sm={10} md={2}>
                             <select id = "dropdown">
-                                <option value="After Last">Parallel</option>
-                                <option value="Before Last">Sequential</option>                                
+                                <option value="After Last">Browser</option>
+                                <option value="Before Last">Web object</option>
+                                <option value="Before Last">Generic</option>
+                                <option value="Before Last">Conditional</option>
+                                <option value="Before Last">Checking</option>
+                                <option value="Before Last">Fetching</option>
                            </select>                           
                             </Col>
                         </FormGroup>
-                        <div className ="row">
-                        <FormGroup>
-                            <Col sm={6} md ={3}>
-                            <Button type = "Submit" bsStyle="success">Save</Button>                       
-                             </Col> 
-                        
-                            <Col sm={6} md ={2}>
-                            <Button bsStyle="danger">cancel</Button>                       
-                             </Col> 
-                        </FormGroup> 
-                        </div>    
-                        <hr/>                        
-                        <h4 style= {{textAlign:"left"}}>Browser Details</h4>                       
-                        <hr/>
                         <FormGroup controlId="formHorizontalText">
                          <Col componentClass={ControlLabel} sm={2} md={2}>
-                         Broswer Engine
+                       URL Type
                          </Col>                           
                             <Col sm={10} md={2}>
                             <select id = "dropdown">
-                                <option value="After Last">PC-webUI</option>
-                                <option value="Before Last">Mobile</option>
-                                <option value="Before Last">API</option>                               
+                                <option value="After Last">Text</option>
+                                <option value="Before Last">Variable</option>
+                                <option value="Before Last">TextWithVariable</option>                                
                            </select>                           
                             </Col>
                         </FormGroup>
-                        <FormGroup controlId="formHorizontalText">  
-                        <Col componentClass={ControlLabel} md={2}>
-                         Name
-                         </Col>                         
-                            <Col sm={10} md={5}>
+                        <FormGroup controlId="formHorizontalText">
+                         <Col componentClass={ControlLabel} sm={2} md={2}>
+                            URL
+                         </Col>
+                         <Col sm={10} md={6}>
                             <FormControl type="text" placeholder="Name" required />
                             </Col>
+                         </FormGroup>
+                         <FormGroup controlId="formHorizontalText">
+                         <Col componentClass={ControlLabel} sm={2} md={2}>
+                            Position
+                         </Col>
+                         <Col sm={10} md={6}>
+                            <FormControl type="text" placeholder="Name" required />
+                            </Col>
+                         </FormGroup>
+                         <FormGroup controlId="formHorizontalText">
+                            <Col componentClass={ControlLabel} sm={2} md={2}>
+                                Variable
+                            </Col>
+                            <Col sm={10} md={6}>
+                                <FormControl type="text" placeholder="Name" required />
+                             </Col>
+                         </FormGroup>
+                         <FormGroup controlId="formHorizontalText">
+                            <Col componentClass={ControlLabel} sm={2} md={2}>
+                                Method
+                            </Col>
+                            <Col sm={10} md={2}>
+                            <select id = "dropdown">
+                                <option value="After Last">Open</option>
+                                <option value="Before Last">Close</option>
+                                <option value="Before Last">Activate</option>
+                                <option value="Before Last">Maximise</option>
+                                <option value="Before Last">Minimise</option>
+                               
+                           </select>
+                             </Col>
+                         </FormGroup>
+                         <FormGroup controlId="formHorizontalText">
+                         <Col componentClass={ControlLabel} sm={2} md={2}>
+                         Upload File
+                         </Col>                           
+                            <Col sm={10} md={6}>
+                            <FormControl type="file" placeholder="Description" required />
+                            </Col>
                         </FormGroup>
                         <FormGroup controlId="formHorizontalText">
                          <Col componentClass={ControlLabel} sm={2} md={2}>
-                        Location
+                         Test Data
                          </Col>                           
-                            <Col sm={10} md={2}>
-                            <select id = "dropdown">
-                                <option value="After Last">Local</option>
-                                <option value="Before Last">Remote/Cloud</option>
-                                <option value="Before Last">Headless</option>                               
-                           </select>                           
+                            <Col sm={10} md={6}>
+                            <FormControl type="file" placeholder="Description" required />
                             </Col>
                         </FormGroup>
-                        <FormGroup controlId="formHorizontalText">
-                         <Col componentClass={ControlLabel} sm={2} md={2}>
-                        Type
-                         </Col>                           
-                            <Col sm={10} md={2}>
-                            <select id = "dropdown">
-                                <option value="After Last">Internet Explorer</option>
-                                <option value="Before Last">Chrome</option>
-                                <option value="Before Last">FireFox</option>                               
-                           </select>                           
-                            </Col>
-                        </FormGroup>
-                        <FormGroup controlId="formHorizontalText">  
-                        <Col componentClass={ControlLabel} md={2}>
-                         Wait
-                         </Col>                         
-                            <Col sm={10} md={5}>
-                            <FormControl type="text" placeholder="In Seconds" required />
-                            </Col>
-                        </FormGroup>
-                        <FormGroup controlId="formHorizontalText">  
-                        <Col componentClass={ControlLabel} md={2}>
-                         Remote URL
-                         </Col>                         
-                            <Col sm={10} md={5}>
-                            <FormControl type="text" required />
-                            </Col>
-                        </FormGroup>
-                        <div className ="row">
+                         <div className ="row">
                         <FormGroup>
                             <Col sm={6} md ={3}>
                             <Button type = "Submit" bsStyle="success">Save</Button>                       
@@ -237,65 +217,19 @@ class ExecutionProfile extends Component {
                             <Button bsStyle="danger">cancel</Button>                       
                              </Col> 
                         </FormGroup> 
-                        <Button bsStyle="primary" bsSize="small" onClick={this.handleShow}>
-                        Browser Properties
-                        </Button>
-
-                    <Modal show={this.state.show} onHide={this.handleClose}>
-                        <Modal.Header closeButton>
-                            <Modal.Title>Step Details</Modal.Title>
-                        </Modal.Header>
-                        <Modal.Body>
-                           
-                        <FormGroup controlId="formHorizontalText">
-                         <Col componentClass={ControlLabel} >
-                     <p>Browser Type</p>  
-                         </Col>                           
-                            <Col >
-                            <select id = "dropdown">
-                            <option value="After Last"> System</option>
-                                <option value="After Last">Drive</option>
-                                <option value="Before Last">Chrome options</option>
-                                <option value="Before Last">FireFox Profile</option>                               
-                           </select>                           
-                            </Col>
-                            </FormGroup>
-                            <FormGroup controlId="formHorizontalText">  
-                        <Col componentClass={ControlLabel} >
-                        <p> Browser Name</p>
-                         </Col>                         
-                            <Col >
-                            <FormControl type="text" placeholder="Type the Browser Name" required />
-                            </Col>                        
-                        </FormGroup>
-                        <FormGroup controlId="formHorizontalText">  
-                        <Col componentClass={ControlLabel} >
-                         <p>Browser Value</p>
-                         </Col>                         
-                            <Col >
-                            <FormControl type="text" placeholder="Type the value" required />
-                            </Col>                        
-                        </FormGroup>
+                        </div>       
                          
-                        </Modal.Body>
-                        <Modal.Footer>
-                            <Button bsStyle="danger" onClick={this.handleClose}>Cancel</Button>
-                            <Button bsStyle="primary">Save changes</Button>
-                        </Modal.Footer>
-                    </Modal>  
-                        </div>                        
-                        
-                                         
                     </Form>
                 </div>                
              </div>
-            </Col>       
+            </Col> 
+      
         </div>
         <div className = "row" style={{marginLeft:"9px"}}>
         <Col md={6}>
             <div className = "medium-card-color-list" style={{height:"650px"}}>
                 <div className = "medium-card-color-light-list">
-                <h4 style={{textAlign:"left",marginLeft:"10px",padding:"12px",marginTop:"0px"}}>List of Execution Profile</h4>
+                <h4 style={{textAlign:"left",marginLeft:"10px",padding:"12px",marginTop:"0px"}}>List of TestCases</h4>
                 </div>
                 <Table responsive  bordered style={{color:"white"}}>
   <thead>
@@ -362,9 +296,10 @@ class ExecutionProfile extends Component {
             </div>
             </Col>
             </div>
-        </div>
-        );
+        
+    </div>
+    );
     }
 }
  
-export default ExecutionProfile;
+export default TestCases;

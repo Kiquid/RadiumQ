@@ -14,6 +14,7 @@ import Header from './components/Header';
 import Changepassword from './components/changepassword';
 import background from './components/background';
 import Execution from './components/ExecutionProfile';
+import Testcase from './components/Testcase';
 
 class App extends Component {
   render() {
@@ -21,7 +22,7 @@ class App extends Component {
       <Router>
         <div>
          <Header/> 
-         
+         <Route exact path="/testcase" component ={Testcase}/>
          <Route exact path="/Changepassword" component ={Changepassword}/>
         <Route exact path="/" component={Admin}/>
         <Route exact path="/User" component ={User}/> 

@@ -33,6 +33,15 @@ class User extends Component {
                                 <h4 style = {{marginTop:"20px"}}>UDF</h4>                                
                             </Link>
                         </center>
+                    </div>                       
+                </Col>
+                <Col  md={2}>
+                    <div class="small-card card-body" style = {{width:"100px"}}>
+                        <center>
+                            <Link to ="/testcase">
+                                <h4 style = {{marginTop:"20px"}}>Test Cases</h4>                                
+                            </Link>
+                        </center>
                     </div> 
                 </Col>
                 <Col  md={2}>
@@ -99,8 +108,7 @@ class User extends Component {
                             <FormControl type="Email" placeholder="Email" required />
                             </Col>
                         </FormGroup>
-                        <FormGroup controlId="formHorizontalText" 
-                        style ={{paddingLeft:"45px"}}>                           
+                        <FormGroup controlId="formHorizontalText"  style ={{paddingLeft:"45px"}}>                           
                             <Col sm={10} md={10}>
                             <FormControl type="text" placeholder="Role" required />
                             </Col>
@@ -114,7 +122,7 @@ class User extends Component {
                         <FormGroup>
                             <Col sm={6} md ={6}>
                             <Button type = "Submit" bsStyle="success">Create</Button>                       
-                             </Col> 
+                             </Col>  
                         
                             <Col sm={6} md ={6}>
                             <Button bsStyle="danger">cancel</Button>                       

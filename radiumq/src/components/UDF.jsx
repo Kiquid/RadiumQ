@@ -3,7 +3,7 @@ import
 {
     Col,Form,
     FormGroup,FormControl,ControlLabel,
-    Checkbox,Button,Table,Glyphicon,ButtonToolbar,Overlay,OverlayTrigger,Tooltip
+    Checkbox,Button,Table,Glyphicon,ButtonToolbar,Overlay,OverlayTrigger,Tooltip,Modal
 } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import './UDF.css';
@@ -20,6 +20,24 @@ const del = (
     </Tooltip>
   );
 class UDF extends Component {
+    constructor(props, context) {
+        super(props, context);
+    
+        this.handleShow = this.handleShow.bind(this);
+        this.handleClose = this.handleClose.bind(this);
+    
+        this.state = {
+          show: false
+        };
+      }
+    
+      handleClose() {
+        this.setState({ show: false });
+      }
+    
+      handleShow() {
+        this.setState({ show: true });
+      }
    // state = {  }
     render() { 
         return (
@@ -56,6 +74,15 @@ class UDF extends Component {
             <Col  md={2}>
                 <div class="small-card card-body" style ={{width:"110px"}}>
                     <center>
+                        <Link to ="/testcase">
+                            <h4 style = {{marginTop:"20px"}}>Test Case</h4>                            
+                        </Link>
+                    </center>
+                </div> 
+            </Col>
+            <Col  md={2}>
+                <div class="small-card card-body" style ={{width:"110px"}}>
+                    <center>
                         <Link to ="/Exe">
                             <h4 style = {{marginTop:"20px"}}>Execution Profile</h4>                            
                         </Link>
@@ -72,7 +99,7 @@ class UDF extends Component {
         </div>
         <div className = "row" style={{marginLeft:"9px"}}>
             <Col md ={6}>
-            <div className = "medium-card-color-list" style={{height:"650px"}}>
+            <div className = "medium-card-color-list" style={{height:"250px"}}>
                 <div className = "medium-card-color-light-list">
                  <h4 style={{textAlign:"left",marginLeft:"10px",padding:"12px",marginTop:"0px"}}>Create UDF</h4>
                     <Form horizontal>                  
@@ -92,23 +119,50 @@ class UDF extends Component {
                             <FormControl type="text" placeholder="Description" required />
                             </Col>
                         </FormGroup>
+                        <p>Test Case Steps</p>
+                        <Button bsStyle="primary" bsSize="small" onClick={this.handleShow}>
+                            Add Step
+                        </Button>
+
+                    <Modal show={this.state.show} onHide={this.handleClose}>
+                        <Modal.Header closeButton>
+                            <Modal.Title>Step Details</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                           
+                            <FormGroup controlId="formHorizontalText">  
+                                <Col componentClass={ControlLabel}>
+                                   <p>Name</p>  
+                                 </Col>                         
+                                <Col>
+                                <FormControl type="text" placeholder="Name" required />
+                                </Col>
+                            </FormGroup>
+                            <FormGroup controlId="formHorizontalText">  
+                                <Col componentClass={ControlLabel}>
+                                    <p>Description</p> 
+                                 </Col>                         
+                                <Col>
+                                <FormControl type="text" placeholder="Description" required />
+                                </Col>
+                            </FormGroup>  
+                            <FormGroup controlId="formHorizontalText">
+                            <Col componentClass={ControlLabel} style={{paddingTop:"0px"}}>
+                            <p>Position Type</p>
+                            </Col>                           
+                              <Col >
+                                <select id = "dropdown">
+                                    <option value="After Last"><p>After Last</p></option>
+                                    <option value="Before Last">Before Last</option>
+                                    <option value="Step No">Step no</option>
+                                </select>
+                           </Col>
+                        </FormGroup> 
                         <FormGroup controlId="formHorizontalText">
-                         <Col componentClass={ControlLabel} sm={2} md={2} style={{paddingTop:"0px"}}>
-                         Position Type
+                         <Col componentClass={ControlLabel} >
+                        <p>Variable Scope</p>
                          </Col>                           
-                            <Col sm={10} md={2}>
-                            <select id = "dropdown">
-                                <option value="After Last">After Last</option>
-                                <option value="Before Last">Before Last</option>
-                                <option value="Step No">Step no</option>
-                           </select>
-                            </Col>
-                        </FormGroup>
-                        <FormGroup controlId="formHorizontalText">
-                         <Col componentClass={ControlLabel} sm={2} md={2}>
-                        Variable Scope
-                         </Col>                           
-                            <Col sm={10} md={2}>
+                            <Col >
                             <select id = "dropdown">
                                 <option value="After Last">Test case</option>
                                 <option value="Before Last">Scenario</option>
@@ -117,10 +171,37 @@ class UDF extends Component {
                             </Col>
                         </FormGroup>
                         <FormGroup controlId="formHorizontalText">
-                         <Col componentClass={ControlLabel} sm={2} md={2}>
-                        Method Type
+                            <Col componentClass={ControlLabel} >
+                               <p>Method</p> 
+                            </Col>
+                            <Col >
+                            <select id = "dropdown">
+                                <option value="After Last">Open</option>
+                                <option value="Before Last">Close</option>
+                                <option value="Before Last">Activate</option>
+                                <option value="Before Last">Maximise</option>
+                                <option value="Before Last">Minimise</option>
+                               
+                           </select>
+                             </Col>
+                         </FormGroup> 
+                         <FormGroup controlId="formHorizontalText">
+                         <Col componentClass={ControlLabel} >
+                            <p>URL Type</p> 
                          </Col>                           
-                            <Col sm={10} md={2}>
+                            <Col>
+                            <select id = "dropdown">
+                                <option value="After Last">Text</option>
+                                <option value="Before Last">Variable</option>
+                                <option value="Before Last">TextWithVariable</option>                                
+                           </select>                           
+                            </Col>
+                        </FormGroup> 
+                        <FormGroup controlId="formHorizontalText">
+                         <Col componentClass={ControlLabel} >
+                      <p>  Method Type</p>
+                         </Col>                           
+                            <Col>
                             <select id = "dropdown">
                                 <option value="After Last">Browser</option>
                                 <option value="Before Last">Web object</option>
@@ -131,70 +212,40 @@ class UDF extends Component {
                            </select>                           
                             </Col>
                         </FormGroup>
+                        
                         <FormGroup controlId="formHorizontalText">
-                         <Col componentClass={ControlLabel} sm={2} md={2}>
-                       URL Type
-                         </Col>                           
-                            <Col sm={10} md={2}>
-                            <select id = "dropdown">
-                                <option value="After Last">Text</option>
-                                <option value="Before Last">Variable</option>
-                                <option value="Before Last">TextWithVariable</option>                                
-                           </select>                           
-                            </Col>
-                        </FormGroup>
-                        <FormGroup controlId="formHorizontalText">
-                         <Col componentClass={ControlLabel} sm={2} md={2}>
-                            URL
+                         <Col componentClass={ControlLabel} >
+                            <p>URL</p>
                          </Col>
-                         <Col sm={10} md={6}>
+                         <Col>
                             <FormControl type="text" placeholder="Name" required />
                             </Col>
                          </FormGroup>
                          <FormGroup controlId="formHorizontalText">
-                         <Col componentClass={ControlLabel} sm={2} md={2}>
-                            Position
+                         <Col componentClass={ControlLabel} >
+                           <p>Position</p> 
                          </Col>
-                         <Col sm={10} md={6}>
+                         <Col >
                             <FormControl type="text" placeholder="Name" required />
                             </Col>
                          </FormGroup>
                          <FormGroup controlId="formHorizontalText">
-                            <Col componentClass={ControlLabel} sm={2} md={2}>
-                                Variable
+                            <Col componentClass={ControlLabel} >
+                               <p>Variable</p> 
                             </Col>
-                            <Col sm={10} md={6}>
+                            <Col>
                                 <FormControl type="text" placeholder="Name" required />
                              </Col>
-                         </FormGroup>
-                         <FormGroup controlId="formHorizontalText">
-                            <Col componentClass={ControlLabel} sm={2} md={2}>
-                                Method
-                            </Col>
-                            <Col sm={10} md={2}>
-                            <select id = "dropdown">
-                                <option value="After Last">Open</option>
-                                <option value="Before Last">Close</option>
-                                <option value="Before Last">Activate</option>
-                                <option value="Before Last">Maximise</option>
-                                <option value="Before Last">Minimise</option>
-                               
-                           </select>
-                             </Col>
-                         </FormGroup>
-                         <div className ="row">
-                        <FormGroup>
-                            <Col sm={6} md ={3}>
-                            <Button type = "Submit" bsStyle="success">Save</Button>                       
-                             </Col> 
-                        
-                            <Col sm={6} md ={2}>
-                            <Button bsStyle="danger">cancel</Button>                       
-                             </Col> 
-                        </FormGroup> 
-                        </div>       
-                         
-                    </Form>
+                         </FormGroup>   
+                        </Modal.Body>
+                        <Modal.Footer>
+                            <Button bsStyle="danger" onClick={this.handleClose}>Cancel</Button>
+                            <Button bsStyle="primary">Save changes</Button>
+                        </Modal.Footer>
+                    </Modal>
+                  </Form>
+                    <div>      
+      </div>
                 </div>                
              </div>
             </Col> 
@@ -213,8 +264,8 @@ class UDF extends Component {
       <th>Name</th>
       <th>Description</th>
       <th>Created on</th>
-      <th></th>
-      <th></th>     
+      <th>Options</th>
+      <th>Options</th>     
     </tr>
   </thead>
   <tbody>
@@ -230,16 +281,17 @@ class UDF extends Component {
                       </Button> 
                   </OverlayTrigger>                  
                 </ButtonToolbar> 
-                      
-     </td>
-     <td>
-     <ButtonToolbar>   
+                <ButtonToolbar>   
         <OverlayTrigger placement="left" overlay={Edit}>               
             <Button bsSize="xsmall">                                         
                 <Glyphicon style = {{color:"#428bca"}} glyph="pencil" />                   
             </Button> 
        </OverlayTrigger>                  
   </ButtonToolbar> 
+                      
+     </td>
+     <td>
+     
      </td>
     </tr>
     <tr>

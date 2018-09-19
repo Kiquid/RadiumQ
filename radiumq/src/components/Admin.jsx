@@ -116,7 +116,9 @@ class Cards extends Component {
           <Col md={2}>
             <div className="small-card card-body" style ={{width:"110px"}}>
             <center>
+              <Link to ="/testcase">
              <p>Test Cases</p>
+             </Link>
              <hr/>
              <Badge>26</Badge>
              </center>
