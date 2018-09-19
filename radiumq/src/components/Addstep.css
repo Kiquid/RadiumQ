@@ -1,0 +1,7 @@
+.alert{
+    background-image: linear-gradient(to bottom,#2f3e47 0,#2f3e47 100%);
+    margin-left: 35px;
+}
+.alert-info{
+    border-color: white;
+}

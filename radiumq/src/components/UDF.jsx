@@ -166,8 +166,7 @@ class UDF extends Component {
                             <select id = "dropdown">
                                 <option value="After Last">Test case</option>
                                 <option value="Before Last">Scenario</option>
-                               
-                           </select>                           
+                            </select>                           
                             </Col>
                         </FormGroup>
                         <FormGroup controlId="formHorizontalText">
@@ -218,7 +217,7 @@ class UDF extends Component {
                             <p>URL</p>
                          </Col>
                          <Col>
-                            <FormControl type="text" placeholder="Name" required />
+                            <FormControl type="text" placeholder="URL" required />
                             </Col>
                          </FormGroup>
                          <FormGroup controlId="formHorizontalText">
@@ -226,7 +225,7 @@ class UDF extends Component {
                            <p>Position</p> 
                          </Col>
                          <Col >
-                            <FormControl type="text" placeholder="Name" required />
+                            <FormControl type="text" placeholder="Position" required />
                             </Col>
                          </FormGroup>
                          <FormGroup controlId="formHorizontalText">
@@ -234,7 +233,7 @@ class UDF extends Component {
                                <p>Variable</p> 
                             </Col>
                             <Col>
-                                <FormControl type="text" placeholder="Name" required />
+                                <FormControl type="text" placeholder="Variable" required />
                              </Col>
                          </FormGroup>   
                         </Modal.Body>

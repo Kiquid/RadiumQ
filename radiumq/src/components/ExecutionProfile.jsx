@@ -9,6 +9,7 @@ import
 import {Link} from 'react-router-dom';
 import './UDF.css';
 import './User.css';
+import Addstep from './Addstep';
 const del = (
     <Tooltip id="tooltip">
       <strong>Delete!</strong> 
@@ -27,6 +28,7 @@ class ExecutionProfile extends Component {
 
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
+    
 
     this.state = {
       show: false
@@ -40,6 +42,7 @@ class ExecutionProfile extends Component {
   handleShow() {
     this.setState({ show: true });
   }
+  
     render() { 
         return (
         <div className = "container">
@@ -100,7 +103,7 @@ class ExecutionProfile extends Component {
         </div>
         <div className = "row" style={{marginLeft:"9px"}}>
             <Col md ={6}>
-            <div className = "medium-card-color-list" style={{height:"850px"}}>
+            <div className = "medium-card-color-list" style={{height:"400px"}}>
                 <div className = "medium-card-color-light-list">
                  <h4 style={{textAlign:"left",marginLeft:"10px",padding:"12px",marginTop:"0px"}}>Create Execution Profile</h4>
                     <Form horizontal>                  
@@ -152,137 +155,63 @@ class ExecutionProfile extends Component {
                                 <option value="Before Last">Sequential</option>                                
                            </select>                           
                             </Col>
+                         
                         </FormGroup>
                         <div className ="row">
                         <FormGroup>
-                            <Col sm={6} md ={3}>
-                            <Button type = "Submit" bsStyle="success">Save</Button>                       
-                             </Col> 
-                        
-                            <Col sm={6} md ={2}>
-                            <Button bsStyle="danger">cancel</Button>                       
-                             </Col> 
+                             <Col md ={10}>
+                             <Addstep/>
+                             </Col>
                         </FormGroup> 
-                        </div>    
-                        <hr/>                        
-                        <h4 style= {{textAlign:"left"}}>Browser Details</h4>                       
-                        <hr/>
-                        <FormGroup controlId="formHorizontalText">
-                         <Col componentClass={ControlLabel} sm={2} md={2}>
-                         Broswer Engine
-                         </Col>                           
-                            <Col sm={10} md={2}>
-                            <select id = "dropdown">
-                                <option value="After Last">PC-webUI</option>
-                                <option value="Before Last">Mobile</option>
-                                <option value="Before Last">API</option>                               
-                           </select>                           
-                            </Col>
-                        </FormGroup>
-                        <FormGroup controlId="formHorizontalText">  
-                        <Col componentClass={ControlLabel} md={2}>
-                         Name
-                         </Col>                         
-                            <Col sm={10} md={5}>
-                            <FormControl type="text" placeholder="Name" required />
-                            </Col>
-                        </FormGroup>
-                        <FormGroup controlId="formHorizontalText">
-                         <Col componentClass={ControlLabel} sm={2} md={2}>
-                        Location
-                         </Col>                           
-                            <Col sm={10} md={2}>
-                            <select id = "dropdown">
-                                <option value="After Last">Local</option>
-                                <option value="Before Last">Remote/Cloud</option>
-                                <option value="Before Last">Headless</option>                               
-                           </select>                           
-                            </Col>
-                        </FormGroup>
-                        <FormGroup controlId="formHorizontalText">
-                         <Col componentClass={ControlLabel} sm={2} md={2}>
-                        Type
-                         </Col>                           
-                            <Col sm={10} md={2}>
-                            <select id = "dropdown">
-                                <option value="After Last">Internet Explorer</option>
-                                <option value="Before Last">Chrome</option>
-                                <option value="Before Last">FireFox</option>                               
-                           </select>                           
-                            </Col>
-                        </FormGroup>
-                        <FormGroup controlId="formHorizontalText">  
-                        <Col componentClass={ControlLabel} md={2}>
-                         Wait
-                         </Col>                         
-                            <Col sm={10} md={5}>
-                            <FormControl type="text" placeholder="In Seconds" required />
-                            </Col>
-                        </FormGroup>
-                        <FormGroup controlId="formHorizontalText">  
-                        <Col componentClass={ControlLabel} md={2}>
-                         Remote URL
-                         </Col>                         
-                            <Col sm={10} md={5}>
-                            <FormControl type="text" required />
-                            </Col>
-                        </FormGroup>
-                        <div className ="row">
-                        <FormGroup>
-                            <Col sm={6} md ={3}>
-                            <Button type = "Submit" bsStyle="success">Save</Button>                       
-                             </Col> 
-                        
-                            <Col sm={6} md ={2}>
-                            <Button bsStyle="danger">cancel</Button>                       
-                             </Col> 
-                        </FormGroup> 
-                        <Button bsStyle="primary" bsSize="small" onClick={this.handleShow}>
-                        Browser Properties
-                        </Button>
+                        </div>                                                
+                                               
+                        <div className ="row">                        
+                            <Button bsStyle="primary" bsSize="small" onClick={this.handleShow}>
+                            Browser Properties
+                            </Button>
 
-                    <Modal show={this.state.show} onHide={this.handleClose}>
-                        <Modal.Header closeButton>
-                            <Modal.Title>Step Details</Modal.Title>
-                        </Modal.Header>
-                        <Modal.Body>
-                           
-                        <FormGroup controlId="formHorizontalText">
-                         <Col componentClass={ControlLabel} >
-                     <p>Browser Type</p>  
-                         </Col>                           
-                            <Col >
-                            <select id = "dropdown">
-                            <option value="After Last"> System</option>
-                                <option value="After Last">Drive</option>
-                                <option value="Before Last">Chrome options</option>
-                                <option value="Before Last">FireFox Profile</option>                               
-                           </select>                           
-                            </Col>
+                        <Modal show={this.state.show} onHide={this.handleClose}>
+                            <Modal.Header closeButton>
+                                <Modal.Title>Step Details</Modal.Title>
+                            </Modal.Header>
+                            <Modal.Body>
+                            
+                            <FormGroup controlId="formHorizontalText">
+                            <Col componentClass={ControlLabel} >
+                        <p>Browser Type</p>  
+                            </Col>                           
+                                <Col >
+                                <select id = "dropdown">
+                                <option value="After Last"> System</option>
+                                    <option value="After Last">Drive</option>
+                                    <option value="Before Last">Chrome options</option>
+                                    <option value="Before Last">FireFox Profile</option>                               
+                            </select>                           
+                                </Col>
+                                </FormGroup>
+                                <FormGroup controlId="formHorizontalText">  
+                            <Col componentClass={ControlLabel} >
+                            <p> Browser Name</p>
+                            </Col>                         
+                                <Col >
+                                <FormControl type="text" placeholder="Type the Browser Name" required />
+                                </Col>                        
                             </FormGroup>
                             <FormGroup controlId="formHorizontalText">  
-                        <Col componentClass={ControlLabel} >
-                        <p> Browser Name</p>
-                         </Col>                         
-                            <Col >
-                            <FormControl type="text" placeholder="Type the Browser Name" required />
-                            </Col>                        
-                        </FormGroup>
-                        <FormGroup controlId="formHorizontalText">  
-                        <Col componentClass={ControlLabel} >
-                         <p>Browser Value</p>
-                         </Col>                         
-                            <Col >
-                            <FormControl type="text" placeholder="Type the value" required />
-                            </Col>                        
-                        </FormGroup>
-                         
-                        </Modal.Body>
-                        <Modal.Footer>
-                            <Button bsStyle="danger" onClick={this.handleClose}>Cancel</Button>
-                            <Button bsStyle="primary">Save changes</Button>
-                        </Modal.Footer>
-                    </Modal>  
+                            <Col componentClass={ControlLabel} >
+                            <p>Browser Value</p>
+                            </Col>                         
+                                <Col >
+                                <FormControl type="text" placeholder="Type the value" required />
+                                </Col>                        
+                            </FormGroup>
+                            
+                            </Modal.Body>
+                            <Modal.Footer>
+                                <Button bsStyle="danger" onClick={this.handleClose}>Cancel</Button>
+                                <Button bsStyle="primary">Save changes</Button>
+                            </Modal.Footer>
+                        </Modal>  
                         </div>                        
                         
                                          
