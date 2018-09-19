@@ -38,14 +38,14 @@ class AddData extends Component {
                                <p>Name</p>  
                              </Col>                         
                             <Col>
-                            <FormControl type="search" placeholder="Search…" required />
+                            <FormControl type="search" placeholder="Input value" required />
                             </Col>
                         </FormGroup>
                         
                     </Modal.Body>
                     <Modal.Footer>
                         <Button bsStyle="danger" onClick={this.handleClose}>Cancel</Button>
-                        <Button bsStyle="primary">Search</Button>
+                        <Button bsStyle="primary">Save</Button>
                     </Modal.Footer>
                 </Modal>
                     

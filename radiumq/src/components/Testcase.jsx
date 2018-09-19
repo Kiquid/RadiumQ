@@ -11,6 +11,8 @@ import './User.css';
 import Addtest from './Addtest';
 import ADDUDF from './Addudf'
 import AddData from './AddData';
+import './testcase.css';
+import './Admin.css';
 const del = (
     <Tooltip id="tooltip">
       <strong>Delete!</strong> 
@@ -289,7 +291,7 @@ class TestCases extends Component {
         </div> 
         <div className = "row" style={{marginLeft:"9px"}}>
         <Col md={6}>
-            <div className = "card example-1" >
+            <div className = "card example-1 scrollbar-ripe-malinka" >
                 <div className = "card-body">
                 <h4 style={{textAlign:"left",marginLeft:"10px",padding:"12px",marginTop:"0px"}}>Test case steps</h4>
                 <hr/>
@@ -504,7 +506,7 @@ class TestCases extends Component {
             </Col>
             <div className = "row" style={{marginLeft:"9px"}}>
         <Col md={6}>
-            <div className = "card example-1" >
+            <div className = "card example-1 scrollbar-ripe-malinka" >
                 <div className = "card-body">
                 <h4 style={{textAlign:"left",marginLeft:"10px",padding:"12px",marginTop:"0px"}}>Test Case Data</h4>
                 <hr/>
@@ -731,7 +733,8 @@ class TestCases extends Component {
                         <Button bsStyle="primary">Save</Button>
 
                         {/* Indicates a successful or positive action */}
-                        <Button bsStyle="success">Success</Button>
+                        <Button bsStyle="success">Execute</Button>
+                        
 
                         {/* Indicates a dangerous or potentially negative action */}
                         <Button bsStyle="danger">Cancel</Button>

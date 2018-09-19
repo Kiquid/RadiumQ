@@ -10,6 +10,8 @@ import {Link} from 'react-router-dom';
 import './UDF.css';
 import './User.css';
 import Addstep from './Addstep';
+import AddDate from './AddData';
+import AddData from './AddData';
 const del = (
     <Tooltip id="tooltip">
       <strong>Delete!</strong> 
@@ -157,17 +159,11 @@ class ExecutionProfile extends Component {
                             </Col>
                          
                         </FormGroup>
-                        <div className ="row">
-                        <FormGroup>
-                             <Col md ={10}>
-                             <Addstep/>
-                             </Col>
-                        </FormGroup> 
-                        </div>                                                
+                                                                      
                                                
                         <div className ="row">                        
                             <Button bsStyle="primary" bsSize="small" onClick={this.handleShow}>
-                            Browser Properties
+                           Add Step
                             </Button>
 
                         <Modal show={this.state.show} onHide={this.handleClose}>
@@ -175,8 +171,75 @@ class ExecutionProfile extends Component {
                                 <Modal.Title>Step Details</Modal.Title>
                             </Modal.Header>
                             <Modal.Body>
-                            
                             <FormGroup controlId="formHorizontalText">
+                                <Col componentClass={ControlLabel} >
+                                <p>Broswer Engine</p> 
+                                </Col>                           
+                                    <Col  >
+                                    <select id = "dropdown">
+                                        <option value="After Last">PC-webUI</option>
+                                        <option value="Before Last">Mobile</option>
+                                        <option value="Before Last">API</option>                               
+                                </select>                           
+                                    </Col>
+                            </FormGroup>
+                            <FormGroup controlId="formHorizontalText">  
+                                <Col componentClass={ControlLabel} >
+                                    <p>Name</p>
+                                </Col>                         
+                                <Col>
+                                 <FormControl type="text" placeholder="Name" required />
+                                </Col>
+                            </FormGroup>
+                            <FormGroup controlId="formHorizontalText">
+                                <Col componentClass={ControlLabel} >
+                                     <p>Location</p> 
+                                </Col>                           
+                                <Col>
+                                    <select id = "dropdown">
+                                       <option value="After Last">Local</option>
+                                        <option value="Before Last">Remote/Cloud</option>
+                                         <option value="Before Last">Headless</option>                               
+                                    </select>                           
+                                </Col>
+                           </FormGroup>
+                            <FormGroup controlId="formHorizontalText">
+                                <Col componentClass={ControlLabel} >
+                                    <p>Type</p>
+                                </Col>                           
+                                <Col>
+                                    <select id = "dropdown">
+                                        <option value="After Last">Internet Explorer</option>
+                                        <option value="Before Last">Chrome</option>
+                                        <option value="Before Last">FireFox</option>                               
+                                     </select>                           
+                                </Col>
+                            </FormGroup>
+                            <FormGroup controlId="formHorizontalText">  
+                                <Col componentClass={ControlLabel}>
+                                <p>Wait</p> 
+                                </Col>                         
+                                <Col>
+                                  <FormControl type="text" placeholder="In Seconds" required />
+                                </Col>
+                            </FormGroup>
+                            <FormGroup controlId="formHorizontalText">  
+                              <Col componentClass={ControlLabel}>
+                                <p>Remote URL</p>
+                              </Col>                         
+                                 <Col >
+                                 <FormControl type="text" required />
+                                </Col>
+                            </FormGroup>
+                            <div className ="row">
+                        <FormGroup>
+                             <Col md ={10}>
+                             <Addstep/>
+                             </Col>
+                        </FormGroup> 
+                        </div>
+                            
+                          {/*<FormGroup controlId="formHorizontalText">
                             <Col componentClass={ControlLabel} >
                         <p>Browser Type</p>  
                             </Col>                           
@@ -204,8 +267,8 @@ class ExecutionProfile extends Component {
                                 <Col >
                                 <FormControl type="text" placeholder="Type the value" required />
                                 </Col>                        
-                            </FormGroup>
-                            
+                            </FormGroup>*/}  
+                             {/*<AddData/>*/} 
                             </Modal.Body>
                             <Modal.Footer>
                                 <Button bsStyle="danger" onClick={this.handleClose}>Cancel</Button>

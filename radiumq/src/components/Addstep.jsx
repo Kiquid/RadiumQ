@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import {Alert,Form,FormControl,Col,ControlLabel,Button,FormGroup,Checkbox} from 'react-bootstrap';
+import {Alert,Form,FormControl,Col,ControlLabel,Button,FormGroup,Checkbox,Table} from 'react-bootstrap';
 import './Addstep.css';
-
 class Addstep extends Component {
    // state = {  }
    constructor(props, context) {
@@ -25,70 +24,60 @@ class Addstep extends Component {
         if (this.state.show) {
             return (
               <Alert  onDismiss={this.handleDismiss}>
-                <h4 style={{color:"white"}}>Browser Details</h4>
+                <h4 style={{color:"white"}}>Browser Properties</h4>
+                <hr/>
                <Form horizontal> 
-               <FormGroup controlId="formHorizontalText">
-                         <Col componentClass={ControlLabel} sm={2} md={2}>
-                        <p>Broswer Engine</p> 
-                         </Col>                           
-                            <Col sm={10} md={2}>
-                            <select id = "dropdown">
-                                <option value="After Last">PC-webUI</option>
-                                <option value="Before Last">Mobile</option>
-                                <option value="Before Last">API</option>                               
-                           </select>                           
+                       <FormGroup controlId="formHorizontalText">
+                            <Col componentClass={ControlLabel} >
+                               <p>Browser Type</p>  
+                            </Col>                           
+                            <Col >
+                              <select id = "dropdown">
+                                <option value="After Last"> System</option>
+                                <option value="After Last">Drive</option>
+                                <option value="Before Last">Chrome options</option>
+                                <option value="Before Last">FireFox Profile</option>                               
+                             </select>                           
                             </Col>
                         </FormGroup>
                         <FormGroup controlId="formHorizontalText">  
-                        <Col componentClass={ControlLabel} md={2}>
-                        <p>Name</p>
-                         </Col>                         
-                            <Col sm={10} md={5}>
-                            <FormControl type="text" placeholder="Name" required />
-                            </Col>
-                        </FormGroup>
-                        <FormGroup controlId="formHorizontalText">
-                         <Col componentClass={ControlLabel} sm={2} md={2}>
-                       <p>Location</p> 
-                         </Col>                           
-                            <Col sm={10} md={2}>
-                            <select id = "dropdown">
-                                <option value="After Last">Local</option>
-                                <option value="Before Last">Remote/Cloud</option>
-                                <option value="Before Last">Headless</option>                               
-                           </select>                           
-                            </Col>
-                        </FormGroup>
-                        <FormGroup controlId="formHorizontalText">
-                         <Col componentClass={ControlLabel} sm={2} md={2}>
-                        <p>Type</p>
-                         </Col>                           
-                            <Col sm={10} md={2}>
-                            <select id = "dropdown">
-                                <option value="After Last">Internet Explorer</option>
-                                <option value="Before Last">Chrome</option>
-                                <option value="Before Last">FireFox</option>                               
-                           </select>                           
-                            </Col>
+                          <Col componentClass={ControlLabel} >
+                            <p> Browser Name</p>
+                          </Col>                         
+                          <Col >
+                             <FormControl type="text" placeholder="Type the Browser Name" required />
+                          </Col>                        
                         </FormGroup>
                         <FormGroup controlId="formHorizontalText">  
-                        <Col componentClass={ControlLabel} md={2}>
-                        <p>Wait</p> 
-                         </Col>                         
-                            <Col sm={10} md={5}>
-                            <FormControl type="text" placeholder="In Seconds" required />
-                            </Col>
+                          <Col componentClass={ControlLabel} >
+                            <p>Browser Value</p>
+                           </Col>                         
+                          <Col >
+                            <FormControl type="text" placeholder="Type the value" required />
+                          </Col>                        
                         </FormGroup>
-                        <FormGroup controlId="formHorizontalText">  
-                        <Col componentClass={ControlLabel} md={2}>
-                         <p>Remote URL</p>
-                         </Col>                         
-                            <Col sm={10} md={5}>
-                            <FormControl type="text" required />
-                            </Col>
-                        </FormGroup>
-    
-      </Form>
+                        <Table responsive  bordered style={{color:"white"}}>
+                        <thead>
+                          <tr>
+                            <th>Type</th>
+                            <th> Name</th>
+                            <th>Value</th>                                
+                          </tr>
+                        </thead>
+                          <tbody>
+                            <tr>
+                              <td>1</td>
+                              <td> Test1</td>
+                              <td>Table cell</td>                             
+                            </tr>
+                            <tr>
+                              <td>1</td>
+                              <td> Test1</td>
+                              <td>Table cell</td>                             
+                            </tr>
+                          </tbody>                        
+                        </Table>
+                  </Form>
                 <p>
                   <Button bsStyle="info">save</Button>
                  
@@ -98,7 +87,7 @@ class Addstep extends Component {
             );
           }
       
-          return <Button onClick={this.handleShow}>Add Step</Button>;
+          return <Button onClick={this.handleShow}>Browser Properties</Button>;
         }
     }
 
