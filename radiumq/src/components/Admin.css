@@ -67,12 +67,12 @@
       width: 10%; 
   }
     }
-   
+   /*
     @media (min-width:992){
       .card{
         width: 450px;
       }
-    }
+    }*/
    
     p,h4{
       color:white

@@ -3,12 +3,24 @@ import
 {
     Col,Form,
     FormGroup,FormControl,
-    Checkbox,Button
+    Checkbox,Button,Badge,Table,
+    ButtonToolbar,OverlayTrigger,
+    Glyphicon,Tooltip
 } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import Admin from './Admin';
 import './Admin.css';
 import './User.css';
+const del = (
+    <Tooltip id="tooltip">
+      <strong>Delete!</strong> 
+    </Tooltip>
+  );
+  const Edit = (
+    <Tooltip id="tooltip">
+      <strong>Edit!</strong> 
+    </Tooltip>
+  );
 class User extends Component {
    // state = {  }
     render() { 
@@ -17,11 +29,12 @@ class User extends Component {
           <div className = "container">
             <div className = "row">
                 <Col  md={2} mdOffset={1}>
-                    <div class="small-card card-body">
+                <div class="small-card card-body">
                         <center>
                             <Link to ="/">
-                                <h4 style = {{marginTop:"20px"}}>Projects</h4>                               
-                               
+                                <p>Projects</p>                               
+                                <hr/>
+                                  <Badge>46</Badge>
                             </Link>
                         </center>
                     </div> 
@@ -30,7 +43,9 @@ class User extends Component {
                     <div class="small-card card-body">
                         <center>
                             <Link to ="/UDF">
-                                <h4 style = {{marginTop:"20px"}}>UDF</h4>                                
+                                <p>UDF</p> 
+                                <hr/>
+                                <Badge>10</Badge>                               
                             </Link>
                         </center>
                     </div>                       
@@ -39,7 +54,9 @@ class User extends Component {
                     <div class="small-card card-body" style = {{width:"100px"}}>
                         <center>
                             <Link to ="/testcase">
-                                <h4 style = {{marginTop:"20px"}}>Test Cases</h4>                                
+                                <p>Test Cases</p> 
+                                <hr/>
+                                <Badge>13</Badge>                                
                             </Link>
                         </center>
                     </div> 
@@ -48,16 +65,20 @@ class User extends Component {
                     <div class="small-card card-body"style = {{width:"100px"}}>
                         <center>
                             <Link to ="/">
-                                <h4 style = {{marginTop:"20px"}}>Scenario</h4>                                
+                                <p>Scenario</p> 
+                                <hr/>
+                                <Badge>13</Badge>                                 
                             </Link>
                         </center>
                     </div> 
                 </Col>
                 <Col  md={2}>
-                    <div class="small-card card-body" style = {{width:"100px"}}>
+                    <div class="small-card card-body">
                         <center>
                             <Link to ="/Exe">
-                                <h4 style = {{marginTop:"20px"}}>Execution Profile</h4>                                
+                                <p> Profile</p> 
+                                <hr/>
+                                <Badge>13</Badge>                                 
                             </Link>
                         </center>
                     </div> 
@@ -66,7 +87,9 @@ class User extends Component {
                     <div class="small-card card-body" style = {{width:"100px"}}>
                         <center>
                             <Link to ="/">
-                                <h4 style = {{marginTop:"20px"}}>Show Details</h4>                                
+                                <p> Details</p> 
+                                <hr/>
+                                <Badge>13</Badge>                                 
                             </Link>
                         </center>
                     </div> 
@@ -131,34 +154,402 @@ class User extends Component {
                         </div>                                         
                     </Form>                   
                     </div>
-                </Col>                              
+                </Col>
+            <Col md={4}>
+                <div className = "card example-1 scrollbar-ripe-malinka" style={{width:"551px",height:"445px",marginLeft:"40px",marginTop:"9px"}}>
+                     <p className = "medium-card-color-light"  style = {{padding:"15px"}}>List of Users</p>
+                     <Table responsive  bordered style={{color:"white"}}>
+                     <thead>
+                        <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Created on</th>
+                        <th>options</th>
+                        <th>options</th>     
+                        </tr>
+                    </thead>
+                        <tbody>
+                            <tr>
+                                <td>Id</td>
+                                <td>Name</td>
+                                <td>Description</td>
+                                <td>Created on</td>
+                                    <td>
+                                        <ButtonToolbar>   
+                                            <OverlayTrigger placement="left" overlay={del}>               
+                                                <Button bsSize="xsmall">                                         
+                                                    <Glyphicon className ="del-color" glyph="remove" />                   
+                                                </Button> 
+                                            </OverlayTrigger>                  
+                                        </ButtonToolbar> 
+                                
+                                    </td>
+                                    <td> <ButtonToolbar>   
+                                            <OverlayTrigger placement="left" overlay={Edit}>               
+                                                <Button bsSize="xsmall">                                         
+                                                    <Glyphicon style = {{color:"#428bca"}} glyph="pencil" />                   
+                                                </Button> 
+                                            </OverlayTrigger>                  
+                                        </ButtonToolbar>
+                                    </td>     
+                             </tr>
+                             <tr>
+                                <td>Id</td>
+                                <td>Name</td>
+                                <td>Description</td>
+                                <td>Created on</td>
+                                    <td>
+                                        <ButtonToolbar>   
+                                            <OverlayTrigger placement="left" overlay={del}>               
+                                                <Button bsSize="xsmall">                                         
+                                                    <Glyphicon className ="del-color" glyph="remove" />                   
+                                                </Button> 
+                                            </OverlayTrigger>                  
+                                        </ButtonToolbar> 
+                                
+                                    </td>
+                                    <td> <ButtonToolbar>   
+                                            <OverlayTrigger placement="left" overlay={Edit}>               
+                                                <Button bsSize="xsmall">                                         
+                                                    <Glyphicon style = {{color:"#428bca"}} glyph="pencil" />                   
+                                                </Button> 
+                                            </OverlayTrigger>                  
+                                        </ButtonToolbar>
+                                    </td>     
+                             </tr>
+                             <tr>
+                                <td>Id</td>
+                                <td>Name</td>
+                                <td>Description</td>
+                                <td>Created on</td>
+                                    <td>
+                                        <ButtonToolbar>   
+                                            <OverlayTrigger placement="left" overlay={del}>               
+                                                <Button bsSize="xsmall">                                         
+                                                    <Glyphicon className ="del-color" glyph="remove" />                   
+                                                </Button> 
+                                            </OverlayTrigger>                  
+                                        </ButtonToolbar> 
+                                
+                                    </td>
+                                    <td> <ButtonToolbar>   
+                                            <OverlayTrigger placement="left" overlay={Edit}>               
+                                                <Button bsSize="xsmall">                                         
+                                                    <Glyphicon style = {{color:"#428bca"}} glyph="pencil" />                   
+                                                </Button> 
+                                            </OverlayTrigger>                  
+                                        </ButtonToolbar>
+                                    </td>     
+                             </tr>
+                             <tr>
+                                <td>Id</td>
+                                <td>Name</td>
+                                <td>Description</td>
+                                <td>Created on</td>
+                                    <td>
+                                        <ButtonToolbar>   
+                                            <OverlayTrigger placement="left" overlay={del}>               
+                                                <Button bsSize="xsmall">                                         
+                                                    <Glyphicon className ="del-color" glyph="remove" />                   
+                                                </Button> 
+                                            </OverlayTrigger>                  
+                                        </ButtonToolbar> 
+                                
+                                    </td>
+                                    <td> <ButtonToolbar>   
+                                            <OverlayTrigger placement="left" overlay={Edit}>               
+                                                <Button bsSize="xsmall">                                         
+                                                    <Glyphicon style = {{color:"#428bca"}} glyph="pencil" />                   
+                                                </Button> 
+                                            </OverlayTrigger>                  
+                                        </ButtonToolbar>
+                                    </td>     
+                             </tr>
+                             <tr>
+                                <td>Id</td>
+                                <td>Name</td>
+                                <td>Description</td>
+                                <td>Created on</td>
+                                    <td>
+                                        <ButtonToolbar>   
+                                            <OverlayTrigger placement="left" overlay={del}>               
+                                                <Button bsSize="xsmall">                                         
+                                                    <Glyphicon className ="del-color" glyph="remove" />                   
+                                                </Button> 
+                                            </OverlayTrigger>                  
+                                        </ButtonToolbar> 
+                                
+                                    </td>
+                                    <td> <ButtonToolbar>   
+                                            <OverlayTrigger placement="left" overlay={Edit}>               
+                                                <Button bsSize="xsmall">                                         
+                                                    <Glyphicon style = {{color:"#428bca"}} glyph="pencil" />                   
+                                                </Button> 
+                                            </OverlayTrigger>                  
+                                        </ButtonToolbar>
+                                    </td>     
+                             </tr>
+                             <tr>
+                                <td>Id</td>
+                                <td>Name</td>
+                                <td>Description</td>
+                                <td>Created on</td>
+                                    <td>
+                                        <ButtonToolbar>   
+                                            <OverlayTrigger placement="left" overlay={del}>               
+                                                <Button bsSize="xsmall">                                         
+                                                    <Glyphicon className ="del-color" glyph="remove" />                   
+                                                </Button> 
+                                            </OverlayTrigger>                  
+                                        </ButtonToolbar> 
+                                
+                                    </td>
+                                    <td> <ButtonToolbar>   
+                                            <OverlayTrigger placement="left" overlay={Edit}>               
+                                                <Button bsSize="xsmall">                                         
+                                                    <Glyphicon style = {{color:"#428bca"}} glyph="pencil" />                   
+                                                </Button> 
+                                            </OverlayTrigger>                  
+                                        </ButtonToolbar>
+                                    </td>     
+                             </tr> <tr>
+                                <td>Id</td>
+                                <td>Name</td>
+                                <td>Description</td>
+                                <td>Created on</td>
+                                    <td>
+                                        <ButtonToolbar>   
+                                            <OverlayTrigger placement="left" overlay={del}>               
+                                                <Button bsSize="xsmall">                                         
+                                                    <Glyphicon className ="del-color" glyph="remove" />                   
+                                                </Button> 
+                                            </OverlayTrigger>                  
+                                        </ButtonToolbar> 
+                                
+                                    </td>
+                                    <td> <ButtonToolbar>   
+                                            <OverlayTrigger placement="left" overlay={Edit}>               
+                                                <Button bsSize="xsmall">                                         
+                                                    <Glyphicon style = {{color:"#428bca"}} glyph="pencil" />                   
+                                                </Button> 
+                                            </OverlayTrigger>                  
+                                        </ButtonToolbar>
+                                    </td>     
+                             </tr> <tr>
+                                <td>Id</td>
+                                <td>Name</td>
+                                <td>Description</td>
+                                <td>Created on</td>
+                                    <td>
+                                        <ButtonToolbar>   
+                                            <OverlayTrigger placement="left" overlay={del}>               
+                                                <Button bsSize="xsmall">                                         
+                                                    <Glyphicon className ="del-color" glyph="remove" />                   
+                                                </Button> 
+                                            </OverlayTrigger>                  
+                                        </ButtonToolbar> 
+                                
+                                    </td>
+                                    <td> <ButtonToolbar>   
+                                            <OverlayTrigger placement="left" overlay={Edit}>               
+                                                <Button bsSize="xsmall">                                         
+                                                    <Glyphicon style = {{color:"#428bca"}} glyph="pencil" />                   
+                                                </Button> 
+                                            </OverlayTrigger>                  
+                                        </ButtonToolbar>
+                                    </td>     
+                             </tr> <tr>
+                                <td>Id</td>
+                                <td>Name</td>
+                                <td>Description</td>
+                                <td>Created on</td>
+                                    <td>
+                                        <ButtonToolbar>   
+                                            <OverlayTrigger placement="left" overlay={del}>               
+                                                <Button bsSize="xsmall">                                         
+                                                    <Glyphicon className ="del-color" glyph="remove" />                   
+                                                </Button> 
+                                            </OverlayTrigger>                  
+                                        </ButtonToolbar> 
+                                
+                                    </td>
+                                    <td> <ButtonToolbar>   
+                                            <OverlayTrigger placement="left" overlay={Edit}>               
+                                                <Button bsSize="xsmall">                                         
+                                                    <Glyphicon style = {{color:"#428bca"}} glyph="pencil" />                   
+                                                </Button> 
+                                            </OverlayTrigger>                  
+                                        </ButtonToolbar>
+                                    </td>     
+                             </tr> <tr>
+                                <td>Id</td>
+                                <td>Name</td>
+                                <td>Description</td>
+                                <td>Created on</td>
+                                    <td>
+                                        <ButtonToolbar>   
+                                            <OverlayTrigger placement="left" overlay={del}>               
+                                                <Button bsSize="xsmall">                                         
+                                                    <Glyphicon className ="del-color" glyph="remove" />                   
+                                                </Button> 
+                                            </OverlayTrigger>                  
+                                        </ButtonToolbar> 
+                                
+                                    </td>
+                                    <td> <ButtonToolbar>   
+                                            <OverlayTrigger placement="left" overlay={Edit}>               
+                                                <Button bsSize="xsmall">                                         
+                                                    <Glyphicon style = {{color:"#428bca"}} glyph="pencil" />                   
+                                                </Button> 
+                                            </OverlayTrigger>                  
+                                        </ButtonToolbar>
+                                    </td>     
+                             </tr> <tr>
+                                <td>Id</td>
+                                <td>Name</td>
+                                <td>Description</td>
+                                <td>Created on</td>
+                                    <td>
+                                        <ButtonToolbar>   
+                                            <OverlayTrigger placement="left" overlay={del}>               
+                                                <Button bsSize="xsmall">                                         
+                                                    <Glyphicon className ="del-color" glyph="remove" />                   
+                                                </Button> 
+                                            </OverlayTrigger>                  
+                                        </ButtonToolbar> 
+                                
+                                    </td>
+                                    <td> <ButtonToolbar>   
+                                            <OverlayTrigger placement="left" overlay={Edit}>               
+                                                <Button bsSize="xsmall">                                         
+                                                    <Glyphicon style = {{color:"#428bca"}} glyph="pencil" />                   
+                                                </Button> 
+                                            </OverlayTrigger>                  
+                                        </ButtonToolbar>
+                                    </td>     
+                             </tr> <tr>
+                                <td>Id</td>
+                                <td>Name</td>
+                                <td>Description</td>
+                                <td>Created on</td>
+                                    <td>
+                                        <ButtonToolbar>   
+                                            <OverlayTrigger placement="left" overlay={del}>               
+                                                <Button bsSize="xsmall">                                         
+                                                    <Glyphicon className ="del-color" glyph="remove" />                   
+                                                </Button> 
+                                            </OverlayTrigger>                  
+                                        </ButtonToolbar> 
+                                
+                                    </td>
+                                    <td> <ButtonToolbar>   
+                                            <OverlayTrigger placement="left" overlay={Edit}>               
+                                                <Button bsSize="xsmall">                                         
+                                                    <Glyphicon style = {{color:"#428bca"}} glyph="pencil" />                   
+                                                </Button> 
+                                            </OverlayTrigger>                  
+                                        </ButtonToolbar>
+                                    </td>     
+                             </tr> <tr>
+                                <td>Id</td>
+                                <td>Name</td>
+                                <td>Description</td>
+                                <td>Created on</td>
+                                    <td>
+                                        <ButtonToolbar>   
+                                            <OverlayTrigger placement="left" overlay={del}>               
+                                                <Button bsSize="xsmall">                                         
+                                                    <Glyphicon className ="del-color" glyph="remove" />                   
+                                                </Button> 
+                                            </OverlayTrigger>                  
+                                        </ButtonToolbar> 
+                                
+                                    </td>
+                                    <td> <ButtonToolbar>   
+                                            <OverlayTrigger placement="left" overlay={Edit}>               
+                                                <Button bsSize="xsmall">                                         
+                                                    <Glyphicon style = {{color:"#428bca"}} glyph="pencil" />                   
+                                                </Button> 
+                                            </OverlayTrigger>                  
+                                        </ButtonToolbar>
+                                    </td>     
+                             </tr> <tr>
+                                <td>Id</td>
+                                <td>Name</td>
+                                <td>Description</td>
+                                <td>Created on</td>
+                                    <td>
+                                        <ButtonToolbar>   
+                                            <OverlayTrigger placement="left" overlay={del}>               
+                                                <Button bsSize="xsmall">                                         
+                                                    <Glyphicon className ="del-color" glyph="remove" />                   
+                                                </Button> 
+                                            </OverlayTrigger>                  
+                                        </ButtonToolbar> 
+                                
+                                    </td>
+                                    <td> <ButtonToolbar>   
+                                            <OverlayTrigger placement="left" overlay={Edit}>               
+                                                <Button bsSize="xsmall">                                         
+                                                    <Glyphicon style = {{color:"#428bca"}} glyph="pencil" />                   
+                                                </Button> 
+                                            </OverlayTrigger>                  
+                                        </ButtonToolbar>
+                                    </td>     
+                             </tr> <tr>
+                                <td>Id</td>
+                                <td>Name</td>
+                                <td>Description</td>
+                                <td>Created on</td>
+                                    <td>
+                                        <ButtonToolbar>   
+                                            <OverlayTrigger placement="left" overlay={del}>               
+                                                <Button bsSize="xsmall">                                         
+                                                    <Glyphicon className ="del-color" glyph="remove" />                   
+                                                </Button> 
+                                            </OverlayTrigger>                  
+                                        </ButtonToolbar> 
+                                
+                                    </td>
+                                    <td> <ButtonToolbar>   
+                                            <OverlayTrigger placement="left" overlay={Edit}>               
+                                                <Button bsSize="xsmall">                                         
+                                                    <Glyphicon style = {{color:"#428bca"}} glyph="pencil" />                   
+                                                </Button> 
+                                            </OverlayTrigger>                  
+                                        </ButtonToolbar>
+                                    </td>     
+                             </tr> <tr>
+                                <td>Id</td>
+                                <td>Name</td>
+                                <td>Description</td>
+                                <td>Created on</td>
+                                    <td>
+                                        <ButtonToolbar>   
+                                            <OverlayTrigger placement="left" overlay={del}>               
+                                                <Button bsSize="xsmall">                                         
+                                                    <Glyphicon className ="del-color" glyph="remove" />                   
+                                                </Button> 
+                                            </OverlayTrigger>                  
+                                        </ButtonToolbar> 
+                                
+                                    </td>
+                                    <td> <ButtonToolbar>   
+                                            <OverlayTrigger placement="left" overlay={Edit}>               
+                                                <Button bsSize="xsmall">                                         
+                                                    <Glyphicon style = {{color:"#428bca"}} glyph="pencil" />                   
+                                                </Button> 
+                                            </OverlayTrigger>                  
+                                        </ButtonToolbar>
+                                    </td>     
+                             </tr>
+                       </tbody>
+                     </Table>
+                </div>
+                </Col>
             </div>  
-           <div className = "medium-card-color-list">
-              <p  className = "medium-card-color-light-list" style = {{padding:"15px"}}>List of Users</p>
-            <div className="row">
-            <Col md={2} style={{color:"white"}}>
-            <p>User ID</p>
-            </Col>
-            <Col md={2} style={{color:"white"}}>
-            <p>Role</p>
-            </Col>
-            <Col md={2} style={{color:"white"}}>
-            <p>Name</p>
-            </Col>
-            <Col md={2} style={{color:"white"}}>
-            <p>Email</p>
-            </Col>
-            <Col md={2} style={{color:"white"}}>
-            <p>Active</p>
-            </Col>
-            <Col md={3} style={{color:"white"}}>
-            <p>Created By</p>
-            </Col>
-            <Col md={3} style={{color:"white"}}>
-            <p>Created on</p>
-            </Col>
-            </div>
-            </div>                                                
+                                                         
           </div>
           
          )

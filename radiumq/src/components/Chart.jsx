@@ -54,7 +54,7 @@ class Chart extends Component {
     <div className="container">
         <div className="row">
             <Col md={4} sm={6} >
-                <div className ="card" style = {{width:"360px", marginLeft:"100px", marginTop:"20px"}}>
+                <div className ="card" style = {{width:"360px", marginTop:"20px"}}>
                     <div className ="card-body">
                         <h4>Testing Results</h4>
                         <hr/>
@@ -80,7 +80,7 @@ class Chart extends Component {
             </Col>
 
             <Col md={4}>
-                <div className ="card" style = {{width:"360px", marginLeft:"100px", marginTop:"20px"}}>
+                <div className ="card" style = {{width:"360px", marginTop:"20px"}}>
                     <div className ="card-body">
                         <h4>Statistic</h4>
                         <hr/>
@@ -98,7 +98,7 @@ class Chart extends Component {
                  </div>
             </Col>
             <Col md={4}>
-                <div className ="card" style = {{width:"360px", marginLeft:"100px", marginTop:"20px"}}>
+                <div className ="card" style = {{width:"360px", marginTop:"20px"}}>
                     <div className ="card-body">
                         <h4>Project Status</h4>
                         <hr/>

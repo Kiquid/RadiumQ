@@ -1,11 +1,12 @@
 import React,{Component} from 'react';
 import {
        Col,Button,ProgressBar,Badge,ButtonGroup,
-       ButtonToolbar,Glyphicon,Tooltip,OverlayTrigger
+       ButtonToolbar,Glyphicon,Tooltip,OverlayTrigger,Container
 } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import Chart from './Chart';
 import './Admin.css';
+import Newproject from './NewProject';
 const del = (
   <Tooltip id="tooltip">
     <strong>Delete!</strong> 
@@ -63,11 +64,13 @@ class Cards extends Component {
     //state = {  }
     render() { 
         return ( 
+         
 //opening of the container
+
 <div className="container">
         <div className="row">
-          <Col md={2}  mdOffset={1}>
-            <div className="small-card card-body color-white">
+          <Col md={2} >
+            <div className="small-card card-body">
               <center>
                   <Link to ="/User">
                     <p>Users</p>
@@ -147,7 +150,9 @@ class Cards extends Component {
           <Col md={2}>
             <div className="small-card card-body">
             <center>
-             <p>Project</p>
+              <Link to ="/UDF">
+               <p>UDF</p>
+             </Link>
              <hr/>
              <Badge>+</Badge>
              </center>
@@ -156,10 +161,17 @@ class Cards extends Component {
           
         </div>
           <div className="row">
-            <Col md={4} mdOffset={1} >
+            <Col md={4}  >
               <div className="card example-1 scrollbar-ripe-malinka">
               <div className="card-body">
-                <h4 >Projects</h4>                 
+              <div className= "row">
+              <Col md={6}>
+                <h4 >Projects</h4> 
+                </Col>
+                <Col md={6}>
+                <h4 ><Newproject/></h4> 
+                </Col>
+                </div>               
               <hr/>
              <div className="row">
                 <Col md={8}>
@@ -525,6 +537,7 @@ class Cards extends Component {
         </div>
        
       </div>
+     
       //closing of the Container
          );
     }

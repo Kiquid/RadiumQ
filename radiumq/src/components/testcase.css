@@ -1,3 +1,6 @@
 .table-responsive{
     overflow-x:unset;
 }
+textarea.form-control{
+    height: 110px;
+}

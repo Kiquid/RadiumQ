@@ -6,7 +6,7 @@ class Footer extends Component {
     render() { 
         return ( 
 
-            <footer className="footer" style={{backgroundColor:"black",height:"40px"}}>
+            <footer className="footer" style={{backgroundcolor:"black",height:"40px"}}>
             <div className="container">
             <center>
               <span className="text-muted">© {(new Date().getFullYear())}, RadiumQ, All rights reserved &nbsp;|| &nbsp; Designed By Iconvix Business Solution</span>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-
+import {Button,Modal,FormGroup,ControlLabel,Col,FormControl} from 'react-bootstrap';
 class BrowserProperties extends Component {
+   
  //   state = {  }
  constructor(props, context) {
     super(props, context);
@@ -25,19 +26,19 @@ class BrowserProperties extends Component {
     render() { 
         return (  
             <div className ="row">                        
-                            <Button bsStyle="primary" bsSize="small" onClick={this.handleShow}>
-                            Browser Properties
+                            <Button bsStyle="primary" bsSize="small" onClick={this.handleShow} style={{marginLeft:"430px",marginTop:"6px"}}>
+                           Configuration
                             </Button>
 
                         <Modal show={this.state.show} onHide={this.handleClose}>
                             <Modal.Header closeButton>
-                                <Modal.Title>Step Details</Modal.Title>
+                                <Modal.Title>Configuration Details</Modal.Title>
                             </Modal.Header>
                             <Modal.Body>
                             
                             <FormGroup controlId="formHorizontalText">
                             <Col componentClass={ControlLabel} >
-                        <p>Browser Type</p>  
+                        <p>Type</p>  
                             </Col>                           
                                 <Col >
                                 <select id = "dropdown">
@@ -50,7 +51,7 @@ class BrowserProperties extends Component {
                                 </FormGroup>
                                 <FormGroup controlId="formHorizontalText">  
                             <Col componentClass={ControlLabel} >
-                            <p> Browser Name</p>
+                            <p> Name</p>
                             </Col>                         
                                 <Col >
                                 <FormControl type="text" placeholder="Type the Browser Name" required />
@@ -58,7 +59,7 @@ class BrowserProperties extends Component {
                             </FormGroup>
                             <FormGroup controlId="formHorizontalText">  
                             <Col componentClass={ControlLabel} >
-                            <p>Browser Value</p>
+                            <p> Value</p>
                             </Col>                         
                                 <Col >
                                 <FormControl type="text" placeholder="Type the value" required />

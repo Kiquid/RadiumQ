@@ -23,7 +23,7 @@ class Header extends Component {
         return ( 
             <div className = "container">
                 <div className = "row">
-                    <Col md={2} mdOffset={1}>
+                    <Col md={2}>
                     <Link to = "/">
                     <img src="./assets/Logo.png" style={{width:"80px"}} />
                     </Link>

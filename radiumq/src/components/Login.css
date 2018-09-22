@@ -1,1 +1,64 @@
+.wrapper{
+    height: 100vh;
+    background-image: url(F:/radiumq/src/components/login1.png);
+    background-origin:border-box;
+    background-attachment: fixed;    
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: contain; /* Resize the background image to cover the entire container */
+    position: relative;
+    background-color: #FF8A03;
+  
+   
+}
 
+.form-wrapper{
+    width: 400px;
+    padding-left:60px;
+    padding-top: 240px; 
+
+}
+.email{
+    color: #8A8888 !important;
+    
+}
+.password{
+    color: #8A8888;
+    font-size: 25px;
+}
+.email-placeholder{
+    padding: 15px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    margin-left: 0px;
+    background-color:#EBEBEB;
+    border-radius: 5px;
+    border:none;
+    width: 300px;
+}
+.password-placeholder{
+    padding: 15px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    margin-left: 0px;
+    background-color:#EBEBEB;
+    border-radius: 5px;
+    border:none;
+    width: 300px;
+    
+}
+.createaccount{
+    padding: 5px;
+    margin-top: 10px;
+   
+}
+.create-button{
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #FF8A03;
+    border:none;
+    border-radius: 5px;
+    color: #fff;
+    width: 150px;
+}

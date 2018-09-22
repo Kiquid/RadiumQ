@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Alert,Form,FormControl,Col,ControlLabel,Button,FormGroup,Checkbox,Table} from 'react-bootstrap';
 import './Addstep.css';
+import Browserproperties from './Browserproperties';
 class Addstep extends Component {
    // state = {  }
    constructor(props, context) {
@@ -23,10 +24,110 @@ class Addstep extends Component {
     render() { 
         if (this.state.show) {
             return (
-              <Alert  onDismiss={this.handleDismiss}>
-                <h4 style={{color:"white"}}>Browser Properties</h4>
+              <Alert  onDismiss={this.handleDismiss} style={{marginTop:"60px",marginRight:"10px"}}>
+                <h4 style={{color:"white"}}>Properties </h4>
                 <hr/>
-               <Form horizontal> 
+               <Form horizontal>
+               <div className = "row">
+                <FormGroup controlId="formHorizontalText">                    
+                      <Col componentClass={ControlLabel} md={2} >
+                          <p>Broswer Engine</p> 
+                        </Col>                           
+                        <Col md={4}>
+                            <select id = "dropdown" style={{width:"351px"}}>
+                              <option value="After Last">PC-webUI</option>
+                              <option value="Before Last">Mobile</option>
+                              <option value="Before Last">API</option>                               
+                          </select>                           
+                          </Col>
+                   
+                  </FormGroup>
+                  </div>
+                  <div className="row">
+                    <FormGroup controlId="formHorizontalText">  
+                      <Col componentClass={ControlLabel} md={2} >
+                        <p>Name</p>
+                      </Col>                         
+                      <Col md={4}>
+                        <FormControl type="text" placeholder="Name" required />
+                      </Col>
+                     </FormGroup>
+                  </div>
+                  <div className="row">
+                   <FormGroup controlId="formHorizontalText">
+                      <Col componentClass={ControlLabel} md={2} >
+                        <p>Location</p> 
+                      </Col>                           
+                       <Col  md={4}>
+                         <select id = "dropdown" style={{width:"351px"}} >
+                           <option value="After Last">Local</option>
+                           <option value="Before Last">Remote/Cloud</option>
+                           <option value="Before Last">Headless</option>                               
+                         </select>                           
+                       </Col>
+                    </FormGroup>
+                  </div>
+                            <FormGroup controlId="formHorizontalText">
+                                <Col componentClass={ControlLabel}  md={2} >
+                                    <p>Type</p>
+                                </Col>                           
+                                <Col  md={4}>
+                                    <select id = "dropdown" style={{width:"351px"}}>
+                                        <option value="After Last">Internet Explorer</option>
+                                        <option value="Before Last">Chrome</option>
+                                        <option value="Before Last">FireFox</option>                               
+                                     </select>                           
+                                </Col>
+                            </FormGroup>
+                            <FormGroup controlId="formHorizontalText">  
+                                <Col componentClass={ControlLabel} md={2}>
+                                <p>Wait</p> 
+                                </Col>                         
+                                <Col md={4}>
+                                  <FormControl type="text" placeholder="In Seconds" required />
+                                </Col>
+                            </FormGroup>
+                            <FormGroup controlId="formHorizontalText">  
+                              <Col componentClass={ControlLabel} md={2}>
+                                <p>Remote URL</p>
+                              </Col>                         
+                                 <Col md={4}>
+                                 <FormControl type="text" required />
+                                </Col>
+                            </FormGroup>
+                            <div className = "medium-card-color-list">
+                              <div className = "medium-card-color-light" >
+                                <div className ="row">
+                                  <Col md={4}>
+                                  <p  style = {{padding:"15px"}}>Browsers</p>
+                                  </Col>
+                                  <Col md={4}>
+                                  <Browserproperties/>
+                                 </Col>
+                                </div>
+                                <Table responsive  bordered style={{color:"white"}}>
+                                            <thead>
+                                                <tr>
+                                                    <th>Type</th>
+                                                    <th>Name</th>
+                                                    <th>Value</th>
+                                                                                          
+                                                </tr>
+                                            </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Type</td>
+                                                        <td>Name</td>
+                                                        <td>Value</td>
+                                                        
+                                                    </tr>
+                                                </tbody>
+                            </Table>
+                             </div>
+                             
+                             </div>
+                            
+               {/*
                        <FormGroup controlId="formHorizontalText">
                             <Col componentClass={ControlLabel} >
                                <p>Browser Type</p>  
@@ -56,27 +157,8 @@ class Addstep extends Component {
                             <FormControl type="text" placeholder="Type the value" required />
                           </Col>                        
                         </FormGroup>
-                        <Table responsive  bordered style={{color:"white"}}>
-                        <thead>
-                          <tr>
-                            <th>Type</th>
-                            <th> Name</th>
-                            <th>Value</th>                                
-                          </tr>
-                        </thead>
-                          <tbody>
-                            <tr>
-                              <td>1</td>
-                              <td> Test1</td>
-                              <td>Table cell</td>                             
-                            </tr>
-                            <tr>
-                              <td>1</td>
-                              <td> Test1</td>
-                              <td>Table cell</td>                             
-                            </tr>
-                          </tbody>                        
-                        </Table>
+               */}
+                        
                   </Form>
                 <p>
                   <Button bsStyle="info">save</Button>
@@ -87,7 +169,7 @@ class Addstep extends Component {
             );
           }
       
-          return <Button onClick={this.handleShow}>Browser Properties</Button>;
+          return <Button Button bsStyle="primary" bsSize="small"  onClick={this.handleShow} style={{marginLeft:"99rem",marginTop:"4px"}}>Add</Button>;
         }
     }
 
