@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Col,Badge,Button,Table,ButtonToolbar,OverlayTrigger,Glyphicon,Tooltip} from 'react-bootstrap';
+import {Grid,Col,Badge,Button,OverlayTrigger,Table,ButtonToolbar,Glyphicon,Tooltip} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
@@ -14,43 +14,21 @@ const del = (
       <strong>Edit!</strong> 
     </Tooltip>
   );
-class TestCases extends Component {
-    state = {  }
+class Scenario extends Component {
+   // state = {  }
     render() { 
         return ( 
-            <div className = "container">
-            <Header/>
-                
+            <div className ="container">
+                  <Header/>
+                <div className="row">
                 <div className = "row" style={{marginLeft:"0px"}}>
-                    <Col  md={2}>
-                    <div class="small-card card-body">
+                <Col  md={2} >
+                <div class="small-card card-body">
                         <center>
                             <Link to ="/">
-                                <p>Projects</p> 
+                                <p>Projects</p>                               
                                 <hr/>
-                                <Badge>10</Badge>
-                            </Link>
-                        </center>
-                    </div> 
-                </Col>
-                <Col  md={2}>
-                    <div class="small-card card-body">
-                        <center>
-                            <Link to ="/User">
-                                <p>User</p>  
-                                <hr/>
-                                <Badge>10</Badge>                          
-                            </Link>
-                        </center>
-                    </div> 
-                </Col>
-                <Col  md={2}>
-                    <div class="small-card card-body">
-                        <center>
-                            <Link to ="/Scenario">
-                                <p>Scenario</p>       
-                                <hr/>
-                                <Badge>10</Badge>                     
+                                  <Badge>46</Badge>
                             </Link>
                         </center>
                     </div> 
@@ -59,9 +37,31 @@ class TestCases extends Component {
                     <div class="small-card card-body">
                         <center>
                             <Link to ="/UDF">
-                                <p>UDF</p>
+                                <p>UDF</p> 
                                 <hr/>
-                                <Badge>10</Badge>                            
+                                <Badge>10</Badge>                               
+                            </Link>
+                        </center>
+                    </div>                       
+                </Col>
+                <Col  md={2}>
+                    <div class="small-card card-body" style = {{width:"100px"}}>
+                        <center>
+                            <Link to ="/testcase">
+                                <p>Test Cases</p> 
+                                <hr/>
+                                <Badge>13</Badge>                                
+                            </Link>
+                        </center>
+                    </div> 
+                </Col>
+                <Col  md={2}>
+                    <div class="small-card card-body"style = {{width:"100px"}}>
+                        <center>
+                            <Link to ="/Scenario">
+                                <p>Scenario</p> 
+                                <hr/>
+                                <Badge>13</Badge>                                 
                             </Link>
                         </center>
                     </div> 
@@ -70,34 +70,46 @@ class TestCases extends Component {
                     <div class="small-card card-body">
                         <center>
                             <Link to ="/Exe">
-                                <p> Profile</p>            
+                                <p> Profile</p> 
                                 <hr/>
-                                <Badge>10</Badge>                
+                                <Badge>13</Badge>                                 
                             </Link>
                         </center>
                     </div> 
                 </Col>
-        </div>
-        <div className = "row">
-            <Col md={12} sm={12} xs={12}>
-                <div className="Banner" style={{marginLeft:"1.5rem",width:"1120px"}}>
+                <Col  md={2}>
+                    <div class="small-card card-body" style = {{width:"100px"}}>
+                        <center>
+                            <Link to ="/">
+                                <p> Details</p> 
+                                <hr/>
+                                <Badge>13</Badge>                                 
+                            </Link>
+                        </center>
+                    </div> 
+                </Col>                
+            </div>
+                </div>
+                <div className = "row">
+                <Col md={12} sm={12} xs={12}>
+                <div className="Banner" style={{marginLeft:"0px"}}>
                         <div className = "row">
                             <Col md={4} sm={4} xs={6} >
-                                <h4 style={{textAlign:"left",marginLeft:"14px"}}>Test Case</h4>
+                                <h4 style={{textAlign:"left",marginLeft:"10px"}}> Scenario</h4>
                             </Col>
                             <Col md={4} sm={4} xs={6} mdOffset={4} >
-                                <Link to="/NewTestcase">
-                                <Button bsStyle="info"  style={{marginTop:"6px",marginLeft:"220px"}}> Test case +</Button>
+                                <Link to="/NewScenario">
+                                <Button bsStyle="info"  style={{float:"right",marginTop:"6px",marginLeft:"50px",marginRight:"5rem"}}>Scenario +</Button>
                                 </Link>
                             </Col>
                         </div>
                 </div>
             </Col>      
         </div>
-        <div className = "row" style={{marginLeft:"0px"}}>
+        <div className = "row">
             <Col md={12} >
                 <div className = "card example-1 scrollbar-ripe-malinka" style={{height:"445px",marginTop:"9px"}}>
-                     <p className = "medium-card-color-light"  style = {{padding:"15px"}}>List of Test Case</p>
+                     <p className = "medium-card-color-light"  style = {{padding:"15px"}}>List of Execution Profile</p>
                      <Table responsive  bordered style={{color:"white"}}>
                      <thead>
                         <tr>
@@ -114,8 +126,7 @@ class TestCases extends Component {
                                 <td>Id</td>
                                 <td>Name</td>
                                 <td>Description</td>
-
-                                <td>Created on </td>
+                                <td>Created on</td>
                                 <td>
                                     <div className="row" >
                                         <Col md={2} mdOffset={1}>
@@ -143,8 +154,7 @@ class TestCases extends Component {
                                 <td>Id</td>
                                 <td>Name</td>
                                 <td>Description</td>
-
-                                <td>Created on </td>
+                                <td>Created on</td>                               
                                 <td>
                                     <div className="row" >
                                         <Col md={2} mdOffset={1}>
@@ -172,8 +182,7 @@ class TestCases extends Component {
                                 <td>Id</td>
                                 <td>Name</td>
                                 <td>Description</td>
-
-                                <td>Created on </td>
+                                <td>Created on</td>
                                 <td>
                                     <div className="row" >
                                         <Col md={2} mdOffset={1}>
@@ -195,14 +204,13 @@ class TestCases extends Component {
                                         </ButtonToolbar>
                                         </Col>
                                     </div>
-                               </td>
+                               </td>   
                              </tr>
                              <tr>
                                 <td>Id</td>
                                 <td>Name</td>
                                 <td>Description</td>
-
-                                <td>Created on </td>
+                                <td>Created on</td>
                                 <td>
                                     <div className="row" >
                                         <Col md={2} mdOffset={1}>
@@ -224,14 +232,13 @@ class TestCases extends Component {
                                         </ButtonToolbar>
                                         </Col>
                                     </div>
-                               </td>
+                               </td>     
                              </tr>
                              <tr>
                                 <td>Id</td>
                                 <td>Name</td>
                                 <td>Description</td>
-
-                                <td>Created on </td>
+                                <td>Created on</td>
                                 <td>
                                     <div className="row" >
                                         <Col md={2} mdOffset={1}>
@@ -253,14 +260,13 @@ class TestCases extends Component {
                                         </ButtonToolbar>
                                         </Col>
                                     </div>
-                               </td>
+                               </td>    
                              </tr>
                              <tr>
                                 <td>Id</td>
                                 <td>Name</td>
                                 <td>Description</td>
-
-                                <td>Created on </td>
+                                <td>Created on</td>
                                 <td>
                                     <div className="row" >
                                         <Col md={2} mdOffset={1}>
@@ -282,14 +288,12 @@ class TestCases extends Component {
                                         </ButtonToolbar>
                                         </Col>
                                     </div>
-                               </td>
-                             </tr>
-                             <tr>
+                               </td>    
+                             </tr> <tr>
                                 <td>Id</td>
                                 <td>Name</td>
                                 <td>Description</td>
-
-                                <td>Created on </td>
+                                <td>Created on</td>
                                 <td>
                                     <div className="row" >
                                         <Col md={2} mdOffset={1}>
@@ -311,14 +315,12 @@ class TestCases extends Component {
                                         </ButtonToolbar>
                                         </Col>
                                     </div>
-                               </td>
-                             </tr> 
-                             <tr>
+                               </td>     
+                             </tr> <tr>
                                 <td>Id</td>
                                 <td>Name</td>
                                 <td>Description</td>
-
-                                <td>Created on </td>
+                                <td>Created on</td>
                                 <td>
                                     <div className="row" >
                                         <Col md={2} mdOffset={1}>
@@ -340,14 +342,12 @@ class TestCases extends Component {
                                         </ButtonToolbar>
                                         </Col>
                                     </div>
-                               </td>
-                             </tr>
-                             <tr>
+                               </td>     
+                             </tr> <tr>
                                 <td>Id</td>
                                 <td>Name</td>
                                 <td>Description</td>
-
-                                <td>Created on </td>
+                                <td>Created on</td>
                                 <td>
                                     <div className="row" >
                                         <Col md={2} mdOffset={1}>
@@ -369,14 +369,12 @@ class TestCases extends Component {
                                         </ButtonToolbar>
                                         </Col>
                                     </div>
-                               </td>
-                             </tr>
-                             <tr>
+                               </td>    
+                             </tr> <tr>
                                 <td>Id</td>
                                 <td>Name</td>
                                 <td>Description</td>
-
-                                <td>Created on </td>
+                                <td>Created on</td>
                                 <td>
                                     <div className="row" >
                                         <Col md={2} mdOffset={1}>
@@ -398,14 +396,12 @@ class TestCases extends Component {
                                         </ButtonToolbar>
                                         </Col>
                                     </div>
-                               </td>
-                             </tr>
-                             <tr>
+                               </td>    
+                             </tr> <tr>
                                 <td>Id</td>
                                 <td>Name</td>
                                 <td>Description</td>
-
-                                <td>Created on </td>
+                                <td>Created on</td>
                                 <td>
                                     <div className="row" >
                                         <Col md={2} mdOffset={1}>
@@ -427,7 +423,7 @@ class TestCases extends Component {
                                         </ButtonToolbar>
                                         </Col>
                                     </div>
-                               </td>
+                               </td>     
                              </tr>
                                  
                             
@@ -436,11 +432,11 @@ class TestCases extends Component {
                 </div>
              </Col>
           </div>
-               
-            <Footer/>
+                <Footer/>
             </div>
+
          );
     }
 }
  
-export default TestCases;
+export default Scenario;

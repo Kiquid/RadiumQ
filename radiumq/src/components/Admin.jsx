@@ -6,6 +6,8 @@ import {
 import {Link} from 'react-router-dom';
 import Chart from './Chart';
 import './Admin.css';
+import Header from './Header';
+import Footer from './Footer';
 import Newproject from './NewProject';
 const del = (
   <Tooltip id="tooltip">
@@ -68,7 +70,8 @@ class Cards extends Component {
 //opening of the container
 
 <div className="container">
-        <div className="row">
+<Header/>
+        <div className="row" style={{marginLeft:"0px"}}>
           <Col md={2} >
             <div className="small-card card-body">
               <center>
@@ -117,10 +120,10 @@ class Cards extends Component {
             </div>                   
           </Col>
           <Col md={2}>
-            <div className="small-card card-body" style ={{width:"110px"}}>
+            <div className="small-card card-body">
             <center>
               <Link to ="/testcase">
-             <p>Test Cases</p>
+             <p> Cases</p>
              </Link>
              <hr/>
              <Badge>26</Badge>
@@ -158,9 +161,22 @@ class Cards extends Component {
              </center>
             </div>          
           </Col>
-          
         </div>
-          <div className="row">
+       
+        <div className = "row" style={{marginLeft:"0px",marginTop:"35px"}}>
+            <Col md={8} sm={12} xs={12}>
+                <div className="Banner" style={{marginLeft:"0px",width:"1117px"}}>
+                  <Col md={4} sm={4} xs={6} >
+                    <h4 style={{textAlign:"left",marginLeft:"10px"}}> Homepage</h4>
+                 </Col>
+                       
+                </div>
+            </Col>
+                 
+        </div>
+             
+       
+          <div className="row" style={{marginLeft:"0px"}}>
             <Col md={4}  >
               <div className="card example-1 scrollbar-ripe-malinka">
               <div className="card-body">
@@ -532,10 +548,10 @@ class Cards extends Component {
               <hr/>
               </div>
              </div>
-            </Col>    
+            </Col>   
            <Chart/>           
-        </div>
-       
+        </div> 
+       <Footer/>
       </div>
      
       //closing of the Container

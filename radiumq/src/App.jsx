@@ -18,12 +18,16 @@ import Testcase from './components/testcase';
 import NewUDF from './components/NewUDF';
 import NewExecutionProfile from './components/NewExecutionProfile';
 import NewTestCases from './components/NewTestcase';
+import Scenario from './components/Scenario';
+import NewScenario from './components/NewScenario';
 
 class App extends Component {
   render() {
     return (
       <Router>
         <div>
+          <Route exact path ="/NewScenario" component={NewScenario}/>
+        <Route exact path ="/Scenario" component={Scenario}/>
         <Route exact path="/NewTestcase" component={NewTestCases}/>
         <Route exact path="/NewExecutionProfile" component={NewExecutionProfile}/>
         <Route exact path ="/NewUDF" component={NewUDF}/>

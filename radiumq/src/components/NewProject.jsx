@@ -35,7 +35,7 @@ class Newproject extends Component {
         return (  <Form horizontal>
                 <ButtonToolbar>
                     <OverlayTrigger placement="left" overlay={New}>
-                        <Button bsStyle="primary" bsSize="small" onClick={this.handleShow}>
+                        <Button bsStyle="primary" bsSize="small" onClick={this.handleShow} style={{marginLeft:"70px"}}>
                             Project +
                         </Button>
                     </OverlayTrigger>

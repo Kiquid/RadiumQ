@@ -5,12 +5,14 @@ import
     FormGroup,FormControl,
     Checkbox,Button,Badge,Table,
     ButtonToolbar,OverlayTrigger,
-    Glyphicon,Tooltip
+    Glyphicon,Tooltip,Breadcrumb
 } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import Admin from './Admin';
 import './Admin.css';
 import './User.css';
+import Header from './Header';
+import Footer from './Footer';
 const del = (
     <Tooltip id="tooltip">
       <strong>Delete!</strong> 
@@ -27,8 +29,9 @@ class User extends Component {
         return ( 
         
           <div className = "container">
-            <div className = "row">
-                <Col  md={2} mdOffset={1}>
+          <Header/>
+            <div className = "row" style={{marginLeft:"0px"}}>
+                <Col  md={2} >
                 <div class="small-card card-body">
                         <center>
                             <Link to ="/">
@@ -64,7 +67,7 @@ class User extends Component {
                 <Col  md={2}>
                     <div class="small-card card-body"style = {{width:"100px"}}>
                         <center>
-                            <Link to ="/">
+                            <Link to ="/Scenario">
                                 <p>Scenario</p> 
                                 <hr/>
                                 <Badge>13</Badge>                                 
@@ -95,8 +98,22 @@ class User extends Component {
                     </div> 
                 </Col>                
             </div>
+            <div className = "row" style={{marginLeft:"0px"}}>
+            <Col md={12} sm={12} xs={12}>
+                <div className="Banner" style={{marginLeft:"0px"}}>
+                  <Col md={4} sm={4} xs={6} >
+                    {/* <h4 style={{textAlign:"left",marginLeft:"10px"}}> Users</h4>*/}
+                    <Breadcrumb style={{marginRight:"146px",marginTop:"6px"}}>
+                        <Breadcrumb.Item ><Link to ="/"><p>Project</p></Link></Breadcrumb.Item>                       
+                        <Breadcrumb.Item active>Users</Breadcrumb.Item>
+                  </Breadcrumb>;
+                 </Col>
+                       
+                </div>
+            </Col>      
+        </div>
             <div className = "row">
-                <Col md= {4} mdOffset={1}>
+                <Col md= {4}>
                     <div className = "medium-card-color">
                      <p  className = "medium-card-color-light" style = {{padding:"15px"}}>Create a New user</p>
                   
@@ -165,8 +182,8 @@ class User extends Component {
                         <th>Name</th>
                         <th>Description</th>
                         <th>Created on</th>
-                        <th>options</th>
-                        <th>options</th>     
+                        <th>Delete&nbsp;/&nbsp;Edit</th>
+                             
                         </tr>
                     </thead>
                         <tbody>
@@ -175,7 +192,9 @@ class User extends Component {
                                 <td>Name</td>
                                 <td>Description</td>
                                 <td>Created on</td>
-                                    <td>
+                                <td>
+                                    <div className="row" >
+                                        <Col md={2} mdOffset={1}>
                                         <ButtonToolbar>   
                                             <OverlayTrigger placement="left" overlay={del}>               
                                                 <Button bsSize="xsmall">                                         
@@ -183,23 +202,27 @@ class User extends Component {
                                                 </Button> 
                                             </OverlayTrigger>                  
                                         </ButtonToolbar> 
-                                
-                                    </td>
-                                    <td> <ButtonToolbar>   
+                                        </Col>
+                                        <Col md ={2} >
+                                        <ButtonToolbar>   
                                             <OverlayTrigger placement="left" overlay={Edit}>               
                                                 <Button bsSize="xsmall">                                         
                                                     <Glyphicon style = {{color:"#428bca"}} glyph="pencil" />                   
                                                 </Button> 
                                             </OverlayTrigger>                  
                                         </ButtonToolbar>
-                                    </td>     
+                                        </Col>
+                                    </div>
+                               </td>     
                              </tr>
                              <tr>
                                 <td>Id</td>
                                 <td>Name</td>
                                 <td>Description</td>
                                 <td>Created on</td>
-                                    <td>
+                                <td>
+                                    <div className="row" >
+                                        <Col md={2} mdOffset={1}>
                                         <ButtonToolbar>   
                                             <OverlayTrigger placement="left" overlay={del}>               
                                                 <Button bsSize="xsmall">                                         
@@ -207,23 +230,27 @@ class User extends Component {
                                                 </Button> 
                                             </OverlayTrigger>                  
                                         </ButtonToolbar> 
-                                
-                                    </td>
-                                    <td> <ButtonToolbar>   
+                                        </Col>
+                                        <Col md ={2} >
+                                        <ButtonToolbar>   
                                             <OverlayTrigger placement="left" overlay={Edit}>               
                                                 <Button bsSize="xsmall">                                         
                                                     <Glyphicon style = {{color:"#428bca"}} glyph="pencil" />                   
                                                 </Button> 
                                             </OverlayTrigger>                  
                                         </ButtonToolbar>
-                                    </td>     
+                                        </Col>
+                                    </div>
+                               </td>   
                              </tr>
                              <tr>
                                 <td>Id</td>
                                 <td>Name</td>
                                 <td>Description</td>
                                 <td>Created on</td>
-                                    <td>
+                                <td>
+                                    <div className="row" >
+                                        <Col md={2} mdOffset={1}>
                                         <ButtonToolbar>   
                                             <OverlayTrigger placement="left" overlay={del}>               
                                                 <Button bsSize="xsmall">                                         
@@ -231,23 +258,27 @@ class User extends Component {
                                                 </Button> 
                                             </OverlayTrigger>                  
                                         </ButtonToolbar> 
-                                
-                                    </td>
-                                    <td> <ButtonToolbar>   
+                                        </Col>
+                                        <Col md ={2} >
+                                        <ButtonToolbar>   
                                             <OverlayTrigger placement="left" overlay={Edit}>               
                                                 <Button bsSize="xsmall">                                         
                                                     <Glyphicon style = {{color:"#428bca"}} glyph="pencil" />                   
                                                 </Button> 
                                             </OverlayTrigger>                  
                                         </ButtonToolbar>
-                                    </td>     
+                                        </Col>
+                                    </div>
+                               </td>    
                              </tr>
                              <tr>
                                 <td>Id</td>
                                 <td>Name</td>
                                 <td>Description</td>
                                 <td>Created on</td>
-                                    <td>
+                                <td>
+                                    <div className="row" >
+                                        <Col md={2} mdOffset={1}>
                                         <ButtonToolbar>   
                                             <OverlayTrigger placement="left" overlay={del}>               
                                                 <Button bsSize="xsmall">                                         
@@ -255,23 +286,27 @@ class User extends Component {
                                                 </Button> 
                                             </OverlayTrigger>                  
                                         </ButtonToolbar> 
-                                
-                                    </td>
-                                    <td> <ButtonToolbar>   
+                                        </Col>
+                                        <Col md ={2} >
+                                        <ButtonToolbar>   
                                             <OverlayTrigger placement="left" overlay={Edit}>               
                                                 <Button bsSize="xsmall">                                         
                                                     <Glyphicon style = {{color:"#428bca"}} glyph="pencil" />                   
                                                 </Button> 
                                             </OverlayTrigger>                  
                                         </ButtonToolbar>
-                                    </td>     
+                                        </Col>
+                                    </div>
+                               </td>   
                              </tr>
                              <tr>
                                 <td>Id</td>
                                 <td>Name</td>
                                 <td>Description</td>
                                 <td>Created on</td>
-                                    <td>
+                                <td>
+                                    <div className="row" >
+                                        <Col md={2} mdOffset={1}>
                                         <ButtonToolbar>   
                                             <OverlayTrigger placement="left" overlay={del}>               
                                                 <Button bsSize="xsmall">                                         
@@ -279,23 +314,27 @@ class User extends Component {
                                                 </Button> 
                                             </OverlayTrigger>                  
                                         </ButtonToolbar> 
-                                
-                                    </td>
-                                    <td> <ButtonToolbar>   
+                                        </Col>
+                                        <Col md ={2} >
+                                        <ButtonToolbar>   
                                             <OverlayTrigger placement="left" overlay={Edit}>               
                                                 <Button bsSize="xsmall">                                         
                                                     <Glyphicon style = {{color:"#428bca"}} glyph="pencil" />                   
                                                 </Button> 
                                             </OverlayTrigger>                  
                                         </ButtonToolbar>
-                                    </td>     
+                                        </Col>
+                                    </div>
+                               </td>    
                              </tr>
                              <tr>
                                 <td>Id</td>
                                 <td>Name</td>
                                 <td>Description</td>
                                 <td>Created on</td>
-                                    <td>
+                                <td>
+                                    <div className="row" >
+                                        <Col md={2} mdOffset={1}>
                                         <ButtonToolbar>   
                                             <OverlayTrigger placement="left" overlay={del}>               
                                                 <Button bsSize="xsmall">                                         
@@ -303,22 +342,26 @@ class User extends Component {
                                                 </Button> 
                                             </OverlayTrigger>                  
                                         </ButtonToolbar> 
-                                
-                                    </td>
-                                    <td> <ButtonToolbar>   
+                                        </Col>
+                                        <Col md ={2} >
+                                        <ButtonToolbar>   
                                             <OverlayTrigger placement="left" overlay={Edit}>               
                                                 <Button bsSize="xsmall">                                         
                                                     <Glyphicon style = {{color:"#428bca"}} glyph="pencil" />                   
                                                 </Button> 
                                             </OverlayTrigger>                  
                                         </ButtonToolbar>
-                                    </td>     
+                                        </Col>
+                                    </div>
+                               </td>    
                              </tr> <tr>
                                 <td>Id</td>
                                 <td>Name</td>
                                 <td>Description</td>
                                 <td>Created on</td>
-                                    <td>
+                                <td>
+                                    <div className="row" >
+                                        <Col md={2} mdOffset={1}>
                                         <ButtonToolbar>   
                                             <OverlayTrigger placement="left" overlay={del}>               
                                                 <Button bsSize="xsmall">                                         
@@ -326,22 +369,26 @@ class User extends Component {
                                                 </Button> 
                                             </OverlayTrigger>                  
                                         </ButtonToolbar> 
-                                
-                                    </td>
-                                    <td> <ButtonToolbar>   
+                                        </Col>
+                                        <Col md ={2} >
+                                        <ButtonToolbar>   
                                             <OverlayTrigger placement="left" overlay={Edit}>               
                                                 <Button bsSize="xsmall">                                         
                                                     <Glyphicon style = {{color:"#428bca"}} glyph="pencil" />                   
                                                 </Button> 
                                             </OverlayTrigger>                  
                                         </ButtonToolbar>
-                                    </td>     
+                                        </Col>
+                                    </div>
+                               </td>     
                              </tr> <tr>
                                 <td>Id</td>
                                 <td>Name</td>
                                 <td>Description</td>
                                 <td>Created on</td>
-                                    <td>
+                                <td>
+                                    <div className="row" >
+                                        <Col md={2} mdOffset={1}>
                                         <ButtonToolbar>   
                                             <OverlayTrigger placement="left" overlay={del}>               
                                                 <Button bsSize="xsmall">                                         
@@ -349,22 +396,26 @@ class User extends Component {
                                                 </Button> 
                                             </OverlayTrigger>                  
                                         </ButtonToolbar> 
-                                
-                                    </td>
-                                    <td> <ButtonToolbar>   
+                                        </Col>
+                                        <Col md ={2} >
+                                        <ButtonToolbar>   
                                             <OverlayTrigger placement="left" overlay={Edit}>               
                                                 <Button bsSize="xsmall">                                         
                                                     <Glyphicon style = {{color:"#428bca"}} glyph="pencil" />                   
                                                 </Button> 
                                             </OverlayTrigger>                  
                                         </ButtonToolbar>
-                                    </td>     
+                                        </Col>
+                                    </div>
+                               </td>     
                              </tr> <tr>
                                 <td>Id</td>
                                 <td>Name</td>
                                 <td>Description</td>
                                 <td>Created on</td>
-                                    <td>
+                                <td>
+                                    <div className="row" >
+                                        <Col md={2} mdOffset={1}>
                                         <ButtonToolbar>   
                                             <OverlayTrigger placement="left" overlay={del}>               
                                                 <Button bsSize="xsmall">                                         
@@ -372,22 +423,26 @@ class User extends Component {
                                                 </Button> 
                                             </OverlayTrigger>                  
                                         </ButtonToolbar> 
-                                
-                                    </td>
-                                    <td> <ButtonToolbar>   
+                                        </Col>
+                                        <Col md ={2} >
+                                        <ButtonToolbar>   
                                             <OverlayTrigger placement="left" overlay={Edit}>               
                                                 <Button bsSize="xsmall">                                         
                                                     <Glyphicon style = {{color:"#428bca"}} glyph="pencil" />                   
                                                 </Button> 
                                             </OverlayTrigger>                  
                                         </ButtonToolbar>
-                                    </td>     
+                                        </Col>
+                                    </div>
+                               </td>     
                              </tr> <tr>
                                 <td>Id</td>
                                 <td>Name</td>
                                 <td>Description</td>
                                 <td>Created on</td>
-                                    <td>
+                                <td>
+                                    <div className="row" >
+                                        <Col md={2} mdOffset={1}>
                                         <ButtonToolbar>   
                                             <OverlayTrigger placement="left" overlay={del}>               
                                                 <Button bsSize="xsmall">                                         
@@ -395,22 +450,26 @@ class User extends Component {
                                                 </Button> 
                                             </OverlayTrigger>                  
                                         </ButtonToolbar> 
-                                
-                                    </td>
-                                    <td> <ButtonToolbar>   
+                                        </Col>
+                                        <Col md ={2} >
+                                        <ButtonToolbar>   
                                             <OverlayTrigger placement="left" overlay={Edit}>               
                                                 <Button bsSize="xsmall">                                         
                                                     <Glyphicon style = {{color:"#428bca"}} glyph="pencil" />                   
                                                 </Button> 
                                             </OverlayTrigger>                  
                                         </ButtonToolbar>
-                                    </td>     
+                                        </Col>
+                                    </div>
+                               </td>     
                              </tr> <tr>
                                 <td>Id</td>
                                 <td>Name</td>
                                 <td>Description</td>
                                 <td>Created on</td>
-                                    <td>
+                                <td>
+                                    <div className="row" >
+                                        <Col md={2} mdOffset={1}>
                                         <ButtonToolbar>   
                                             <OverlayTrigger placement="left" overlay={del}>               
                                                 <Button bsSize="xsmall">                                         
@@ -418,22 +477,26 @@ class User extends Component {
                                                 </Button> 
                                             </OverlayTrigger>                  
                                         </ButtonToolbar> 
-                                
-                                    </td>
-                                    <td> <ButtonToolbar>   
+                                        </Col>
+                                        <Col md ={2} >
+                                        <ButtonToolbar>   
                                             <OverlayTrigger placement="left" overlay={Edit}>               
                                                 <Button bsSize="xsmall">                                         
                                                     <Glyphicon style = {{color:"#428bca"}} glyph="pencil" />                   
                                                 </Button> 
                                             </OverlayTrigger>                  
                                         </ButtonToolbar>
-                                    </td>     
+                                        </Col>
+                                    </div>
+                               </td>     
                              </tr> <tr>
                                 <td>Id</td>
                                 <td>Name</td>
                                 <td>Description</td>
                                 <td>Created on</td>
-                                    <td>
+                                <td>
+                                    <div className="row" >
+                                        <Col md={2} mdOffset={1}>
                                         <ButtonToolbar>   
                                             <OverlayTrigger placement="left" overlay={del}>               
                                                 <Button bsSize="xsmall">                                         
@@ -441,22 +504,26 @@ class User extends Component {
                                                 </Button> 
                                             </OverlayTrigger>                  
                                         </ButtonToolbar> 
-                                
-                                    </td>
-                                    <td> <ButtonToolbar>   
+                                        </Col>
+                                        <Col md ={2} >
+                                        <ButtonToolbar>   
                                             <OverlayTrigger placement="left" overlay={Edit}>               
                                                 <Button bsSize="xsmall">                                         
                                                     <Glyphicon style = {{color:"#428bca"}} glyph="pencil" />                   
                                                 </Button> 
                                             </OverlayTrigger>                  
                                         </ButtonToolbar>
-                                    </td>     
+                                        </Col>
+                                    </div>
+                               </td>     
                              </tr> <tr>
                                 <td>Id</td>
                                 <td>Name</td>
                                 <td>Description</td>
                                 <td>Created on</td>
-                                    <td>
+                                <td>
+                                    <div className="row" >
+                                        <Col md={2} mdOffset={1}>
                                         <ButtonToolbar>   
                                             <OverlayTrigger placement="left" overlay={del}>               
                                                 <Button bsSize="xsmall">                                         
@@ -464,22 +531,26 @@ class User extends Component {
                                                 </Button> 
                                             </OverlayTrigger>                  
                                         </ButtonToolbar> 
-                                
-                                    </td>
-                                    <td> <ButtonToolbar>   
+                                        </Col>
+                                        <Col md ={2} >
+                                        <ButtonToolbar>   
                                             <OverlayTrigger placement="left" overlay={Edit}>               
                                                 <Button bsSize="xsmall">                                         
                                                     <Glyphicon style = {{color:"#428bca"}} glyph="pencil" />                   
                                                 </Button> 
                                             </OverlayTrigger>                  
                                         </ButtonToolbar>
-                                    </td>     
+                                        </Col>
+                                    </div>
+                               </td>     
                              </tr> <tr>
                                 <td>Id</td>
                                 <td>Name</td>
                                 <td>Description</td>
                                 <td>Created on</td>
-                                    <td>
+                                <td>
+                                    <div className="row" >
+                                        <Col md={2} mdOffset={1}>
                                         <ButtonToolbar>   
                                             <OverlayTrigger placement="left" overlay={del}>               
                                                 <Button bsSize="xsmall">                                         
@@ -487,22 +558,26 @@ class User extends Component {
                                                 </Button> 
                                             </OverlayTrigger>                  
                                         </ButtonToolbar> 
-                                
-                                    </td>
-                                    <td> <ButtonToolbar>   
+                                        </Col>
+                                        <Col md ={2} >
+                                        <ButtonToolbar>   
                                             <OverlayTrigger placement="left" overlay={Edit}>               
                                                 <Button bsSize="xsmall">                                         
                                                     <Glyphicon style = {{color:"#428bca"}} glyph="pencil" />                   
                                                 </Button> 
                                             </OverlayTrigger>                  
                                         </ButtonToolbar>
-                                    </td>     
+                                        </Col>
+                                    </div>
+                               </td>    
                              </tr> <tr>
                                 <td>Id</td>
                                 <td>Name</td>
                                 <td>Description</td>
                                 <td>Created on</td>
-                                    <td>
+                                <td>
+                                    <div className="row" >
+                                        <Col md={2} mdOffset={1}>
                                         <ButtonToolbar>   
                                             <OverlayTrigger placement="left" overlay={del}>               
                                                 <Button bsSize="xsmall">                                         
@@ -510,22 +585,26 @@ class User extends Component {
                                                 </Button> 
                                             </OverlayTrigger>                  
                                         </ButtonToolbar> 
-                                
-                                    </td>
-                                    <td> <ButtonToolbar>   
+                                        </Col>
+                                        <Col md ={2} >
+                                        <ButtonToolbar>   
                                             <OverlayTrigger placement="left" overlay={Edit}>               
                                                 <Button bsSize="xsmall">                                         
                                                     <Glyphicon style = {{color:"#428bca"}} glyph="pencil" />                   
                                                 </Button> 
                                             </OverlayTrigger>                  
                                         </ButtonToolbar>
-                                    </td>     
+                                        </Col>
+                                    </div>
+                               </td>    
                              </tr> <tr>
                                 <td>Id</td>
                                 <td>Name</td>
                                 <td>Description</td>
                                 <td>Created on</td>
-                                    <td>
+                                <td>
+                                    <div className="row" >
+                                        <Col md={2} mdOffset={1}>
                                         <ButtonToolbar>   
                                             <OverlayTrigger placement="left" overlay={del}>               
                                                 <Button bsSize="xsmall">                                         
@@ -533,23 +612,25 @@ class User extends Component {
                                                 </Button> 
                                             </OverlayTrigger>                  
                                         </ButtonToolbar> 
-                                
-                                    </td>
-                                    <td> <ButtonToolbar>   
+                                        </Col>
+                                        <Col md ={2} >
+                                        <ButtonToolbar>   
                                             <OverlayTrigger placement="left" overlay={Edit}>               
                                                 <Button bsSize="xsmall">                                         
                                                     <Glyphicon style = {{color:"#428bca"}} glyph="pencil" />                   
                                                 </Button> 
                                             </OverlayTrigger>                  
                                         </ButtonToolbar>
-                                    </td>     
+                                        </Col>
+                                    </div>
+                               </td>    
                              </tr>
                        </tbody>
                      </Table>
                 </div>
                 </Col>
             </div>  
-                                                         
+          <Footer/>                                               
           </div>
           
          )
